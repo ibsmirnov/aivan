@@ -1,0 +1,190 @@
+/* Base styles inspired by Tufte's principles */
+:root {
+    --text-color: #111111;
+    --background-color: #fffff8;
+    --body-width: 87.5%;
+    --side-offset: 12.5%;
+    --text-width: 55%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    width: var(--body-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--side-offset);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: 1400px;
+    counter-reset: sidenote-counter;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-right: 0;
+    vertical-align: baseline;
+    width: var(--text-width);
+}
+
+/* Sidenotes */
+.sidenote {
+    float: right;
+    clear: right;
+    margin-right: -60%;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    vertical-align: baseline;
+    position: relative;
+    background-color: var(--background-color);
+}
+
+.sidenote-number {
+    counter-increment: sidenote-counter;
+    font-size: 0.7rem;
+    vertical-align: super;
+    position: relative;
+    top: -0.2em;
+}
+
+.sidenote-number:after {
+    content: counter(sidenote-counter);
+    vertical-align: baseline;
+}
+
+.sidenote:before {
+    content: counter(sidenote-counter) " ";
+    font-size: 0.7rem;
+    vertical-align: super;
+    position: relative;
+    top: -0.2em;
+}
+
+/* Hide sidenote checkbox */
+input.margin-toggle {
+    display: none;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 760px) {
+    body {
+        width: 84%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    p {
+        width: 100%;
+    }
+
+    label.margin-toggle:not(.sidenote-number) {
+        display: inline;
+    }
+
+    .sidenote {
+        display: none;
+    }
+
+    .margin-toggle:checked + .sidenote {
+        display: block;
+        float: left;
+        left: 1rem;
+        clear: both;
+        width: 95%;
+        margin: 1rem 2.5%;
+        position: relative;
+    }
+}
+
+/* Quotes */
+blockquote {
+    width: var(--text-width);
+    margin: 0;
+    padding: 0.5rem 2rem;
+    border-left: 3px solid #ccc;
+    margin-left: 0;
+}
+
+blockquote p {
+    width: 100%;
+    font-style: italic;
+}
+
+/* Smart quotes */
+q, blockquote {
+    quotes: """ """ "'" "'";
+}
+
+/* Links */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid #777;
+}
+
+a:hover {
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* Home link */
+.home-link {
+    margin: 1rem 0;
+    width: var(--text-width);
+}
+
+.home-link a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: none;
+}
+
+.home-link a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 760px) {
+    .home-link {
+        width: 100%;
+    }
+}
+
+/* Article container */
+article {
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+}
