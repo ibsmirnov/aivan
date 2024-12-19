@@ -147,14 +147,59 @@ q, blockquote {
     quotes: """ """ "'" "'";
 }
 
-/* Links */
+/* Links - remove the default styles first */
 a {
     color: var(--text-color);
     text-decoration: none;
-    border-bottom: 1px solid #777;
+    border-bottom: none;
 }
 
 a:hover {
+    border-bottom: none;
+}
+
+/* Navigation specific styles */
+.site-nav {
+    width: var(--text-width);
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;  /* Add some horizontal padding */
+}
+
+.site-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover {
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* Footer */
+.site-footer {
+    width: var(--text-width);
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+
+.site-footer p {
+    margin: 0;
+    width: 100%;
+    font-size: 0.7rem;  /* Make it even smaller */
+}
+
+/* Article links can have underline */
+article a {
+    border-bottom: 1px solid #777;
+}
+
+article a:hover {
     border-bottom: 1px solid var(--text-color);
 }
 
@@ -187,4 +232,12 @@ article {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     width: 100%;
+}
+
+/* Responsive adjustments for navigation and footer */
+@media screen and (max-width: 760px) {
+    .site-nav,
+    .site-footer {
+        width: 100%;
+    }
 }
