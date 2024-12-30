@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is ML transcript</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="site-nav"><a href="/">← Return Home</a>  <a href="about_the_author.html">About</a></nav>
+    <article>
+        <h1>What is ML transcript</h1>
+<p>This is an <strong>unverified</strong> transcript of the video 
+<a href="https://www.youtube.com/watch?v=cJthRy1RFm4">What is ML video</a>.</p>
+<p>Hello, my name is Ivan. Welcome to “Getting Started with GenAI in Research”. In this video, we continue discussing the technologies behind GenAI. We‘ve already covered what AI (Artificial Intelligence) is, and now we’ll explore ML or Machine Learning.
+While machine learning is an advanced field in computer science, conceptually it‘s quite simple. I’d like to give you this conceptual understanding of how machine learning works.</p>
+<p>Let‘s consider a simple example with two variables: GDP per capita and life expectancy. We’ll use data from countries in one region for a specific year.</p>
+<p>Let‘s try linear regression—probably the simplest statistical model you might encounter in science. If you’re not familiar with it, the idea is to draw a line through these data points, but not randomly. You try to draw it in such a way that it fits the data as accurately as possible. </p>
+<p>Mathematically speaking, this means computing the vertical differences between your points and the line and minimising the sum of their squares.</p>
+<p>Regression is a common instrument in social sciences. Usually, with regression, you‘re saying that if the slope of the line is positive, there’s a positive relationship between life expectancy and GDP per capita. But linear regression is also a simple machine learning model. Once you plot this line, you can take another country—let‘s say Germany—where we only know the GDP per capita but not life expectancy. We can use this line to predict Germany’s life expectancy. In this particular case, it‘s quite a nice prediction: we predicted 78.92 years, while the actual value is 79.41 years, with the actual data point appearing here
+.
+More generally, what we did was:</p>
+<ul>
+<li>Use a very simple function (y = a₁x + a₂)</li>
+<li>Use training data to find optimal parameters a₁ and a₂ (in this case, the slope and intercept of our line)</li>
+<li>Fix these parameters and use them for future predictions of y valueswith new x values</li>
+</ul>
+<p>While this function is simple, real-world data can be more complicated. Sometimes, instead of a line, we need to draw a curved line through the data points. In some cases, one predictor isn’t enough, and we might need several predictors. There are generalisations of the simple linear regression model, but the core idea remains the same: you have a function with parameters and input values, use training data to compute optimal parameter values, fix them, and then use this function with fixed parameters to predict new values.</p>
+<p>This is exactly how complicated language models work. They may sound complex, but it‘s also just a function. For example, when you hear that Meta introduced a new model called Llama with 405 billion parameters, it means they released a function that’s much more complicated than linear regression with two parameters—but it operates the same way. They use training data to find optimal values for these 405 billion parameters, and then you can apply this function to your own data to get new predictions.</p>
+<p>The only important difference between our example and more complicated functions is that with linear regression, it‘s possible to compute optimal parameter values using a mathematical formula. With more complex functions, this isn’t possible. Instead, people start with random parameters and feed training data chunk by chunk, updating parameters each time so they become better and the function returns results closer to desired outcomes. For large language models, this training phase could require months on very powerful computers—it’s not something you can do on your own computer or immediately. But the overall idea remains the same.</p>
+    </article>
+    <footer class="site-footer"><p>Copyright &copy; 2025 University of Technology Sydney</p></footer>
+</body>
+</html>

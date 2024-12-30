@@ -5,6 +5,7 @@
     --body-width: 87.5%;
     --side-offset: 12.5%;
     --text-width: 55%;
+    --list-width: var(--text-width);
 }
 
 body {
@@ -314,5 +315,77 @@ article {
     .video-with-annotation {
         max-width: 100%;
         padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+    }
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+    width: var(--text-width);
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.1em;
+    margin-bottom: 0.3em;
+    line-height: 1.6;
+}
+
+ul li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+}
+
+/* Ensure all list items wrap properly */
+ul li, ol li {
+    width: 100%;  /* Use full width of the ul/ol container */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+
+/* Numbered lists */
+ol {
+    width: var(--text-width);
+    padding-left: 1.5em;
+}
+
+ol li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 760px) {
+    body {
+        width: 84%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    p, ul, ol {
+        width: 100%;
+    }
+
+    label.margin-toggle:not(.sidenote-number) {
+        display: inline;
+    }
+
+    .sidenote {
+        display: none;
+    }
+
+    .margin-toggle:checked + .sidenote {
+        display: block;
+        float: left;
+        left: 1rem;
+        clear: both;
+        width: 95%;
+        margin: 1rem 2.5%;
+        position: relative;
     }
 }
