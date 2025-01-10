@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be aware of differences with humans</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="site-nav"><a href="/">← Return Home</a>  <a href="about_the_author.html">About</a></nav>
+    <article>
+        <h1 id="be-aware-of-differences-with-humans">Be aware of differences with humans</h1>
+<p>Large language models often perform as remarkably smart and knowledgeable human-like assistants. However, you should be aware that they can unexpectedly fail at really simple tasks. Check out my recent conversation with ChatGPT:</p>
+<figure class="image-container">
+    <img src="assets/images/raspberry_1.png" alt="image">
+</figure>
+
+<figure class="image-container">
+    <img src="assets/images/raspberry_2.png" alt="image">
+</figure>
+
+<p>Please note that you might not be able to reproduce the examples I provide throughout the course. AI models are not only frequently updated with improved versions, but developers also tend to hot fix any specific mistakes that become well-known publicly. However, I encourage you to experiment and find your own examples of similar behaviour. The example above originally became well-known with the word ‘strawberry’. When I tried to reproduce it, ChatGPT answered correctly. However, I easily discovered the same issue when asking about the number of ‘r’ letters in ‘raspberry’.</p>
+<h2 id="the-reversal-curse">The Reversal Curse</h2>
+<p>Two particular weaknesses of LLMs are reasoning and generalisation. The simplest reasoning task is probably understanding that if A is B then B is A. Remarkably, AI models often struggle with this. For example, ChatGPT knows that the mother of Wes Anderson is Texas Ann (Burroughs) but claims that it has no idea who her son might be:</p>
+<figure class="image-container">
+    <img src="assets/images/wes_1.png" alt="image">
+</figure>
+
+<figure class="image-container">
+    <img src="assets/images/wes_2.png" alt="image">
+</figure>
+
+<p>This example comes from the paper <a href="https://arxiv.org/abs/2309.12288">‘The Reversal Curse: LLMs trained on “A is B” fail to learn “B is A”’</a>, where authors systematically analyzed 1,000 such parent-child relationships. They found that models are much more likely to know a celebrity‘s parent than to answer the reverse question—who someone’s child is.</p>
+<figure class="image-with-annotation">
+    <img src="assets/images/curse_plot.png" alt="image">
+    <figcaption>The blue bars show the model’s probability of returning the correct parent when queried with their celebrity child; organge bars show the probability of returning the child when queried with the parent. Note: authors omit GPT-4 from the graph because it was used to generate the list of child-parent pairs and so has 100% accuracy on “Parent” by construction. GPT-4 scores 28% on “Child”.</figcaption>
+</figure>
+
+<p>The paper used Tom Cruise and his mother to illustrate the issue. Similar to my previous example, I wasn‘t able to reproduce that particular case, but after some experimentation I found another person with whom the problem was still present.</p>
+<p>This might not be so surprising if you remember that <a href="what_is_generative_ai.html#llms">large language models are trained</a> to predict the next word given the context. As the authors of the paper explain:</p>
+<blockquote>
+<p>In particular, suppose that a model’s training set contains sentences like “Valentina Tereshkova was
+the first woman to travel to space”, where the name “Valentina Tereshkova” precedes the description
+“the first woman to travel to space”. Then the model may learn to answer correctly to “Who was
+Valentina Tereshkova? A: The first woman to travel to space”. But it will fail to answer “Who was
+the first woman to travel to space?” and any other prompts where the description precedes the name.</p>
+</blockquote>
+<p>The failures in such simple tasks as counting letters and understanding that if A is B, then B is A are especially important, because LLMs are so good at producing long coherent texts. This can create an illusion that they truly understand something well and lead to unexpected errors when we rely too much on AI assistants. This discrepancy between generative and reasoning abilities of LLMs is called ’The Generative AI paradox&rsquo;.</p>
+<h2 id="the-generative-ai-paradox">The Generative AI Paradox</h2>
+    </article>
+    <footer class="site-footer"><p>Copyright &copy; 2025 University of Technology Sydney</p></footer>
+</body>
+</html>
