@@ -33,7 +33,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 }
 
 h2 {
@@ -64,6 +64,21 @@ p {
 }
 
 /* Sidenotes */
+.sidenote-number {
+    counter-increment: sidenote-counter;
+    display: inline-block;
+    max-height: 2rem;
+}
+
+.sidenote-number:after {
+    content: counter(sidenote-counter);
+    font-size: 0.7rem;
+    top: -0.5rem;
+    left: 0.1rem;
+    position: relative;
+    vertical-align: baseline;
+}
+
 .sidenote {
     float: right;
     clear: right;
@@ -75,28 +90,14 @@ p {
     line-height: 1.4;
     vertical-align: baseline;
     position: relative;
-    background-color: var(--background-color);
-}
-
-.sidenote-number {
-    counter-increment: sidenote-counter;
-    font-size: 0.7rem;
-    vertical-align: super;
-    position: relative;
-    top: -0.2em;
-}
-
-.sidenote-number:after {
-    content: counter(sidenote-counter);
-    vertical-align: baseline;
 }
 
 .sidenote:before {
     content: counter(sidenote-counter) " ";
     font-size: 0.7rem;
-    vertical-align: super;
+    top: -0.5rem;
     position: relative;
-    top: -0.2em;
+    vertical-align: baseline;
 }
 
 /* Hide sidenote checkbox */
@@ -110,32 +111,32 @@ label.margin-toggle:not(.sidenote-number) {
 
 /* Responsive adjustments */
 @media screen and (max-width: 760px) {
-    body {
-        width: 84%;
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    p {
+    /* Adjust main content width */
+    p, ul, ol {
         width: 100%;
     }
-
-    label.margin-toggle:not(.sidenote-number) {
-        display: inline;
-    }
-
+    
+    /* Hide sidenotes by default */
     .sidenote {
         display: none;
+        float: none;
+        margin: 1rem 0;
+        width: 100%;
+        position: relative;
     }
 
+    /* Show toggle button */
+    .sidenote-number {
+        cursor: pointer;
+    }
+
+    /* Show sidenote when checkbox is checked */
     .margin-toggle:checked + .sidenote {
         display: block;
-        float: left;
-        left: 1rem;
-        clear: both;
-        width: 95%;
-        margin: 1rem 2.5%;
-        position: relative;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-left: 2px solid #ccc;
+        background-color: var(--background-color);
     }
 }
 
@@ -259,6 +260,12 @@ article {
     width: var(--text-width);
 }
 
+img {
+    border: 1px solid #e0e0e0;  /* Very light grey border */
+    border-radius: 5px;  /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Light shadow */
+}
+
 .image-container img {
     width: 100%;
     height: auto;
@@ -356,7 +363,6 @@ article {
 /* Images */
 figure img {
     max-width: 100%;
-    border: 1px solid #e0e0e0;  /* Very light grey border */
 }
 
 /* Lists */
@@ -428,5 +434,280 @@ ol li {
         width: 95%;
         margin: 1rem 2.5%;
         position: relative;
+    }
+}
+
+/* Margin notes and margin figures */
+.marginnote {
+    float: right;
+    clear: right;
+    margin-right: -60%;
+    width: 50%;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    vertical-align: baseline;
+    position: relative;
+    background-color: var(--background-color);
+}
+
+.margin-toggle {
+    display: none;
+}
+
+.margin-toggle:checked + .marginnote {
+    display: block;
+}
+
+.margin-figure {
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.marginnote-caption {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+/* For small screens */
+@media screen and (max-width: 760px) {
+    .marginnote {
+        display: none;
+        margin-right: 0;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    label.margin-toggle {
+        display: inline;
+        color: #777;
+    }
+
+    .margin-toggle:checked + .marginnote {
+        display: block;
+        float: none;
+        left: 0;
+        clear: both;
+        width: 95%;
+        margin: 1rem 2.5%;
+        padding: 0.5rem;
+        position: relative;
+    }
+
+    .margin-figure {
+        display: block;
+        width: 100%;
+        margin: 0 auto 1rem auto;
+    }
+
+    .marginnote p {
+        width: 100%;
+        clear: both;
+    }
+}
+
+/* Figures and Images */
+figure {
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    max-width: 55%;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin: 0 0 3em 0;
+}
+
+figcaption {
+    float: right;
+    clear: right;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    vertical-align: baseline;
+    position: relative;
+    max-width: 40%;
+}
+
+/* Full-width figures */
+figure.fullwidth {
+    max-width: 100%;
+}
+
+figure.fullwidth figcaption {
+    margin-right: 24%;
+    max-width: none;
+}
+
+/* Base image styling */
+img {
+    max-width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for figures */
+@media screen and (max-width: 760px) {
+    figure {
+        max-width: 90%;
+        margin: 0 0 2em 0;
+    }
+
+    figcaption {
+        float: none;
+        margin-right: 0;
+        max-width: none;
+        margin-top: 0.5em;
+    }
+
+    figure.fullwidth figcaption {
+        margin-right: 0;
+    }
+}
+
+/* Base responsive layout */
+@media screen and (max-width: 760px) {
+    body {
+        width: 84%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    /* Content width adjustments */
+    p, ul, ol, dl, table, blockquote p, blockquote footer {
+        width: 100%;
+    }
+
+    blockquote {
+        margin-left: 1.5em;
+        margin-right: 0;
+    }
+
+    /* Table adjustments */
+    div.table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        min-width: 500px;  /* Ensures tables remain readable */
+    }
+
+    /* Code block adjustments */
+    pre > code {
+        width: 97%;
+        padding: 1em 1.5em;
+        font-size: 0.9rem;
+    }
+
+    /* List adjustments */
+    ul, ol {
+        width: 90%;
+        -webkit-padding-start: 5%;
+        padding-inline-start: 5%;
+    }
+
+    /* Heading adjustments */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .subheading {
+        font-size: 1.4rem;
+        width: 100%;
+    }
+}
+
+/* Smaller screens */
+@media screen and (max-width: 480px) {
+    body {
+        width: 92%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .subheading {
+        font-size: 1.3rem;
+    }
+
+    pre > code {
+        font-size: 0.8rem;
+        padding: 0.75em 1em;
+    }
+
+    blockquote {
+        margin-left: 1em;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        width: 100%;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    p, ul, ol, dl, table, blockquote p, blockquote footer {
+        width: 100%;
+    }
+
+    .sidenote, .marginnote {
+        float: none;
+        display: block;
+        margin: 1em 0;
+        width: 100%;
+        position: relative;
+    }
+
+    .margin-toggle, input.margin-toggle {
+        display: none;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    pre > code {
+        white-space: pre-wrap;
+        width: 100%;
+    }
+
+    a:link, a:visited {
+        text-decoration: underline;
+        color: #000;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 }
