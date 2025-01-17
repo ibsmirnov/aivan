@@ -258,6 +258,7 @@ article {
 .image-container {
     margin: 2rem 0;
     width: var(--text-width);
+    clear: both;  /* Ensure it doesn't flow around other elements */
 }
 
 img {
@@ -272,49 +273,34 @@ img {
     display: block;
 }
 
-/* Responsive adjustments for images */
-@media screen and (max-width: 760px) {
-    .image-container {
-        width: 100%;
-    }
-}
-
 /* Image annotations */
 .image-with-annotation {
     margin: 2rem 0;
     width: var(--text-width);
+    clear: both;  /* Ensure it doesn't flow around other elements */
+    display: block;  /* Make it a block element */
 }
 
 .image-with-annotation img {
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: 0.5rem;  /* Space between image and caption */
 }
 
 .image-with-annotation figcaption {
     margin-top: 0.5rem;
-    font-size: 0.8rem;  /* Make text smaller */
-    color: #777;  /* Lighter grey color */
+    font-size: 0.9rem;
+    color: #666;
     line-height: 1.4;
-}
-
-.image-with-annotation figcaption a {
-    color: #777;  /* Make links match the text color */
-    border-bottom: 1px solid #999;  /* Subtle underline for links */
-}
-
-.image-with-annotation figcaption a:hover {
-    color: #555;  /* Darker on hover */
-    border-bottom: 1px solid #555;
+    text-align: left;
+    float: none;  /* Override any floating */
+    clear: both;  /* Ensure proper clearing */
+    max-width: 100%;  /* Use full width */
+    margin-bottom: 1rem;  /* Space after caption */
 }
 
 /* Responsive adjustments for images */
-@media screen and (max-width: 760px) {
-    .image-with-annotation {
-        width: 100%;
-    }
-}
-
 @media screen and (max-width: 760px) {
     .image-container {
         width: 100%;
