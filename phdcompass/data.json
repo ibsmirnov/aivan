@@ -14505,7 +14505,8 @@
       ],
       "level": 111,
       "binary_proportion": 0.02760143527463428,
-      "binary_proportion_normalized": 0.0
+      "binary_proportion_normalized": 0.0,
+      "summary": "PhD application processes, research proposals, statements of purpose, writing and publishing during a PhD, authorship and intellectual property, challenges in PhD research, and career prospects after PhD."
     },
     "7247": {
       "id": 7247,
@@ -14570,7 +14571,8 @@
       ],
       "level": 110,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Standardized tests (GRE, TOEFL, IELTS) and their significance, preparation, submission, and waivers in PhD admissions."
     },
     "7248": {
       "id": 7248,
@@ -21774,7 +21776,8 @@
       ],
       "level": 110,
       "binary_proportion": 0.027812543457099152,
-      "binary_proportion_normalized": 0.00021710046695152656
+      "binary_proportion_normalized": 0.00021710046695152656,
+      "summary": "PhD application process, Statement of Purpose (SOP)/Motivation Letter, PhD thesis writing, publications and authorship ethics, PhD admissions considerations (e.g., grades, research experience), navigating academia as a PhD student, and dealing with challenges in PhD research and progress."
     },
     "7249": {
       "id": 7249,
@@ -22011,7 +22014,8 @@
       ],
       "level": 109,
       "binary_proportion": 0.008928571428571428,
-      "binary_proportion_normalized": -0.6765178571428572
+      "binary_proportion_normalized": -0.6765178571428572,
+      "summary": "Letters of recommendation and references for PhD applications and academic positions."
     },
     "7250": {
       "id": 7250,
@@ -28989,7 +28993,8 @@
       ],
       "level": 109,
       "binary_proportion": 0.028427853553481694,
-      "binary_proportion_normalized": 0.0008498760784173082
+      "binary_proportion_normalized": 0.0008498760784173082,
+      "summary": "PhD Applications and Admissions, PhD Research and Thesis Writing,Academic Challenges and Adjustments in PhD, Publications and Peer Review, PhD Life and Career Decisions."
     },
     "7251": {
       "id": 7251,
@@ -29028,7 +29033,8 @@
       ],
       "level": 108,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Age considerations and age-related challenges in pursuing, applying for, and succeeding in PhD programs and academia."
     },
     "7252": {
       "id": 7252,
@@ -35949,7 +35955,8 @@
       ],
       "level": 108,
       "binary_proportion": 0.028228141285466125,
-      "binary_proportion_normalized": 0.0006444949977984018
+      "binary_proportion_normalized": 0.0006444949977984018,
+      "summary": "PhD application materials, including research proposals, statements of purpose, cover letters, and academic writing samples."
     },
     "7253": {
       "id": 7253,
@@ -35969,7 +35976,8 @@
       ],
       "level": 47,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Requesting and managing letters of recommendation (LoRs) for academic applications."
     },
     "7254": {
       "id": 7254,
@@ -36133,7 +36141,8 @@
       ],
       "level": 47,
       "binary_proportion": 0.013245033112582781,
-      "binary_proportion_normalized": -0.5201324503311259
+      "binary_proportion_normalized": -0.5201324503311259,
+      "summary": "Recommendation letters for academic applications, particularly for PhD programs."
     },
     "7255": {
       "id": 7255,
@@ -36168,7 +36177,8 @@
       ],
       "level": 31,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Letters of Recommendation for PhD Applications"
     },
     "7256": {
       "id": 7256,
@@ -36300,7 +36310,8 @@
       ],
       "level": 31,
       "binary_proportion": 0.01680672268907563,
-      "binary_proportion_normalized": -0.39109243697478996
+      "binary_proportion_normalized": -0.39109243697478996,
+      "summary": "Letters of Recommendation for PhD Applications"
     },
     "7257": {
       "id": 7257,
@@ -36350,7 +36361,8 @@
       ],
       "level": 12,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Letters of Recommendation for PhD Applications"
     },
     "7258": {
       "id": 7258,
@@ -36434,7 +36446,8 @@
       ],
       "level": 12,
       "binary_proportion": 0.014084507042253521,
-      "binary_proportion_normalized": -0.48971830985915493
+      "binary_proportion_normalized": -0.48971830985915493,
+      "summary": "Recommendation letters: Requesting, writing, choosing recommenders, managing issues with supervisors, and understanding their role in academic and professional applications."
     },
     "7259": {
       "id": 7259,
@@ -36463,7 +36476,8 @@
       ],
       "level": 0,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Requesting, managing, and troubleshooting academic recommendation letters."
     },
     "7260": {
       "id": 7260,
@@ -36502,7 +36516,8 @@
       ],
       "level": 0,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Letters of recommendation: acquisition, guidelines, processes, and best practices."
     },
     "7261": {
       "id": 7261,
@@ -43130,7 +43145,8 @@
       ],
       "level": 107,
       "binary_proportion": 0.028269085411942556,
-      "binary_proportion_normalized": 0.0006866013191790745
+      "binary_proportion_normalized": 0.0006866013191790745,
+      "summary": "PhD application process and requirements, PhD research and thesis writing, academic ethics and integrity, and challenges and strategies for PhD students and supervisors."
     },
     "7262": {
       "id": 7262,
@@ -43261,7 +43277,8 @@
       ],
       "level": 107,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD application documents, particularly the Statement of Purpose (SOP), Motivation Letter, Cover Letter, and Research/Personal Statements \u2013 their structure, content, tone, and distinctions."
     },
     "7263": {
       "id": 7263,
@@ -43297,7 +43314,8 @@
       ],
       "level": 105,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Writing and structuring motivation letters and cover letters for PhD applications."
     },
     "7264": {
       "id": 7264,
@@ -43390,7 +43408,8 @@
       ],
       "level": 105,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Writing and structuring a Statement of Purpose (SOP) and Personal Statement for PhD applications."
     },
     "7265": {
       "id": 7265,
@@ -43448,7 +43467,8 @@
       ],
       "level": 106,
       "binary_proportion": 0.020833333333333332,
-      "binary_proportion_normalized": -0.2452083333333334
+      "binary_proportion_normalized": -0.2452083333333334,
+      "summary": "Titles, honorifics, and designations for PhD students, candidates, and holders."
     },
     "7266": {
       "id": 7266,
@@ -50005,7 +50025,8 @@
       ],
       "level": 106,
       "binary_proportion": 0.028422982885085574,
-      "binary_proportion_normalized": 0.0008448671565895637
+      "binary_proportion_normalized": 0.0008448671565895637,
+      "summary": "PhD application process, advisor-supervisee dynamics, academic ethics, mental health challenges in academia, research publication strategies."
     },
     "7267": {
       "id": 7267,
@@ -56258,7 +56279,8 @@
       ],
       "level": 104,
       "binary_proportion": 0.0266025641025641,
-      "binary_proportion_normalized": -0.0361891025641026
+      "binary_proportion_normalized": -0.0361891025641026,
+      "summary": "PhD Application and Admissions Process, PhD Research and Thesis Writing, Authorship and Publication Ethics, Conference Participation, PhD Challenges and Guidance, Post-PhD Pathways"
     },
     "7268": {
       "id": 7268,
@@ -56278,7 +56300,8 @@
       ],
       "level": 104,
       "binary_proportion": 0.2,
-      "binary_proportion_normalized": 0.17729208061311386
+      "binary_proportion_normalized": 0.17729208061311386,
+      "summary": "Advisor-Student Relationship Challenges and Ethical Issues in Academia."
     },
     "7269": {
       "id": 7269,
@@ -56418,7 +56441,8 @@
       ],
       "level": 103,
       "binary_proportion": 0.03937007874015748,
-      "binary_proportion_normalized": 0.01210269522440833
+      "binary_proportion_normalized": 0.01210269522440833,
+      "summary": "PhD interviews, application processes, and follow-up communication (preparation, expectations, feedback, presentations, timelines, and etiquette)."
     },
     "7270": {
       "id": 7270,
@@ -62383,7 +62407,8 @@
       ],
       "level": 103,
       "binary_proportion": 0.025705645161290324,
-      "binary_proportion_normalized": -0.06868447580645157
+      "binary_proportion_normalized": -0.06868447580645157,
+      "summary": "PhD application, management, research, publishing, and related academic challenges."
     },
     "7271": {
       "id": 7271,
@@ -62482,7 +62507,8 @@
       ],
       "level": 102,
       "binary_proportion": 0.03488372093023256,
-      "binary_proportion_normalized": 0.007488992600122781
+      "binary_proportion_normalized": 0.007488992600122781,
+      "summary": "PhD interview preparation and expectations, including attire, presentation requirements, interview questions, and behavioral strategies."
     },
     "7272": {
       "id": 7272,
@@ -62528,7 +62554,8 @@
       ],
       "level": 102,
       "binary_proportion": 0.027777777777777776,
-      "binary_proportion_normalized": 0.00018134796732582537
+      "binary_proportion_normalized": 0.00018134796732582537,
+      "summary": "PhD application process, interview outcomes, and communication with potential supervisors or admission committees."
     },
     "7273": {
       "id": 7273,
@@ -62596,7 +62623,8 @@
       ],
       "level": 97,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD interview preparation, expectations, etiquette, and strategies."
     },
     "7274": {
       "id": 7274,
@@ -62631,7 +62659,8 @@
       ],
       "level": 97,
       "binary_proportion": 0.08,
-      "binary_proportion_normalized": 0.0538858927050809
+      "binary_proportion_normalized": 0.0538858927050809,
+      "summary": "PhD interview presentations and preparation strategies."
     },
     "7275": {
       "id": 7275,
@@ -62694,7 +62723,8 @@
       ],
       "level": 101,
       "binary_proportion": 0.05660377358490566,
-      "binary_proportion_normalized": 0.029825566760747435
+      "binary_proportion_normalized": 0.029825566760747435,
+      "summary": "PhD thesis defense preparation, process, challenges, and post-defense considerations."
     },
     "7276": {
       "id": 7276,
@@ -68476,7 +68506,8 @@
       ],
       "level": 101,
       "binary_proportion": 0.025654359507713644,
-      "binary_proportion_normalized": -0.07054255503553471
+      "binary_proportion_normalized": -0.07054255503553471,
+      "summary": "PhD Supervisor Relationships and Academic Challenges. Specifically, they cover issues around research dynamics with supervisors, academic struggles in PhD programs, handling co-authorship and intellectual property, publishing challenges, PhD admissions, and personal/ethical concerns in academia."
     },
     "7277": {
       "id": 7277,
@@ -68593,7 +68624,8 @@
       ],
       "level": 100,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD studies and academic systems in Germany (e.g., salary, prerequisites, programs, visas, recognition, and career prospects)."
     },
     "7278": {
       "id": 7278,
@@ -74259,7 +74291,8 @@
       ],
       "level": 100,
       "binary_proportion": 0.026180788961613303,
-      "binary_proportion_normalized": -0.05147001592075005
+      "binary_proportion_normalized": -0.05147001592075005,
+      "summary": "PhD processes and challenges. Subtopics include admissions, supervisor relations, research progress, thesis writing, publications, ethical considerations, work-life balance, mental health during PhD, academic transitions, and academic job market navigation."
     },
     "7279": {
       "id": 7279,
@@ -79065,7 +79098,8 @@
       ],
       "level": 99,
       "binary_proportion": 0.024201961193407052,
-      "binary_proportion_normalized": -0.12316294596286252
+      "binary_proportion_normalized": -0.12316294596286252,
+      "summary": "PhD admissions criteria, advisor and supervisor dynamics, PhD research topic selection and challenges, personal and academic struggles during PhD, program transitions or switching, impact of academic records on PhD applications, navigating relationships with potential advisors, mental health and motivation issues, and funding and international PhD options."
     },
     "7280": {
       "id": 7280,
@@ -79929,7 +79963,8 @@
       ],
       "level": 99,
       "binary_proportion": 0.03760282021151586,
-      "binary_proportion_normalized": 0.010285273240511487
+      "binary_proportion_normalized": 0.010285273240511487,
+      "summary": "PhD research and academic writing, including thesis composition, publication practices, conference participation, authorship issues, intellectual property, ethics, plagiarism, peer review processes, and integration of PhD work into broader academic careers."
     },
     "7281": {
       "id": 7281,
@@ -81091,7 +81126,8 @@
       ],
       "level": 98,
       "binary_proportion": 0.04525674499564839,
-      "binary_proportion_normalized": 0.018156453908383233
+      "binary_proportion_normalized": 0.018156453908383233,
+      "summary": "PhD advisors, supervision, and advisor-student relationships."
     },
     "7282": {
       "id": 7282,
@@ -84738,7 +84774,8 @@
       ],
       "level": 98,
       "binary_proportion": 0.017611447440836543,
-      "binary_proportion_normalized": -0.36193725921849207
+      "binary_proportion_normalized": -0.36193725921849207,
+      "summary": "PhD admissions process and challenges during PhD applications and coursework."
     },
     "7283": {
       "id": 7283,
@@ -85847,7 +85884,8 @@
       ],
       "level": 96,
       "binary_proportion": 0.046532846715328466,
-      "binary_proportion_normalized": 0.019468777646788258
+      "binary_proportion_normalized": 0.019468777646788258,
+      "summary": "Advisor-Supervisee Relationships and Supervisor Selection"
     },
     "7284": {
       "id": 7284,
@@ -85868,7 +85906,8 @@
       ],
       "level": 96,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD supervision and external examiners."
     },
     "7285": {
       "id": 7285,
@@ -85949,7 +85988,8 @@
       ],
       "level": 80,
       "binary_proportion": 0.014705882352941176,
-      "binary_proportion_normalized": -0.4672058823529412
+      "binary_proportion_normalized": -0.4672058823529412,
+      "summary": "Academic reading and comprehension, PhD thesis writing, submission, and organization, and participation in conferences as a PhD student."
     },
     "7286": {
       "id": 7286,
@@ -86592,7 +86632,8 @@
       ],
       "level": 80,
       "binary_proportion": 0.044444444444444446,
-      "binary_proportion_normalized": 0.01732109628788596
+      "binary_proportion_normalized": 0.01732109628788596,
+      "summary": "PhD Thesis Writing and Publications"
     },
     "7287": {
       "id": 7287,
@@ -86645,7 +86686,8 @@
       ],
       "level": 75,
       "binary_proportion": 0.023255813953488372,
-      "binary_proportion_normalized": -0.1574418604651163
+      "binary_proportion_normalized": -0.1574418604651163,
+      "summary": "Academic reading and comprehension strategies, research paper and literature management, PhD thesis preparation and organization, and conference participation for PhD students."
     },
     "7288": {
       "id": 7288,
@@ -86671,7 +86713,8 @@
       ],
       "level": 75,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD thesis preparation, ethics, and confidentiality."
     },
     "7289": {
       "id": 7289,
@@ -86811,7 +86854,8 @@
       ],
       "level": 95,
       "binary_proportion": 0.015748031496062992,
-      "binary_proportion_normalized": -0.4294488188976378
+      "binary_proportion_normalized": -0.4294488188976378,
+      "summary": "PhD application, admission, deferral, acceptance, rejection, funding decisions, and post-acceptance offer management."
     },
     "7290": {
       "id": 7290,
@@ -90175,7 +90219,8 @@
       ],
       "level": 95,
       "binary_proportion": 0.016413011041480154,
-      "binary_proportion_normalized": -0.405356609967174
+      "binary_proportion_normalized": -0.405356609967174,
+      "summary": "PhD applications, admission requirements, poor grades, research proposal, transitioning into a PhD program, interdisciplinary PhD topics, academic performance explanations, and self-improvement during the PhD process. "
     },
     "7291": {
       "id": 7291,
@@ -90201,7 +90246,8 @@
       ],
       "level": 92,
       "binary_proportion": 0.0625,
-      "binary_proportion_normalized": 0.035889156968492764
+      "binary_proportion_normalized": 0.035889156968492764,
+      "summary": "PhD admissions, deferrals, and related decision-making strategies."
     },
     "7292": {
       "id": 7292,
@@ -90315,7 +90361,8 @@
       ],
       "level": 92,
       "binary_proportion": 0.009615384615384616,
-      "binary_proportion_normalized": -0.6516346153846153
+      "binary_proportion_normalized": -0.6516346153846153,
+      "summary": "PhD admissions, offers, rejections, and decision-making processes."
     },
     "7293": {
       "id": 7293,
@@ -90811,7 +90858,8 @@
       ],
       "level": 94,
       "binary_proportion": 0.004140786749482402,
-      "binary_proportion_normalized": -0.8499792960662527
+      "binary_proportion_normalized": -0.8499792960662527,
+      "summary": "Graduate School Admissions, Transitioning Between Fields, Interdisciplinary Research, Non-Academic Career Prospects, and Career Trajectories for PhD Holders."
     },
     "7294": {
       "id": 7294,
@@ -93675,7 +93723,8 @@
       ],
       "level": 94,
       "binary_proportion": 0.018589968432129077,
-      "binary_proportion_normalized": -0.32648544370396354
+      "binary_proportion_normalized": -0.32648544370396354,
+      "summary": "PhD Applications, Admissions Challenges, Motivation, Research Fit"
     },
     "7295": {
       "id": 7295,
@@ -93718,7 +93767,8 @@
       ],
       "level": 71,
       "binary_proportion": 0.06060606060606061,
-      "binary_proportion_normalized": 0.03394145829570184
+      "binary_proportion_normalized": 0.03394145829570184,
+      "summary": "Academic ethics, research ownership, and intellectual property in PhD studies."
     },
     "7296": {
       "id": 7296,
@@ -94292,7 +94342,8 @@
       ],
       "level": 71,
       "binary_proportion": 0.0427807486631016,
-      "binary_proportion_normalized": 0.015610176669434319
+      "binary_proportion_normalized": 0.015610176669434319,
+      "summary": "Authorship ethics and disputes, PhD thesis structure and writing, publishing during and after a PhD, and ethical considerations in academic research and publications."
     },
     "7297": {
       "id": 7297,
@@ -94322,7 +94373,8 @@
       ],
       "level": 91,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic and career transitions after or during a PhD, including field changes, interdisciplinary shifts, and exploration of post-PhD job prospects."
     },
     "7298": {
       "id": 7298,
@@ -94793,7 +94845,8 @@
       ],
       "level": 91,
       "binary_proportion": 0.004366812227074236,
-      "binary_proportion_normalized": -0.8417903930131004
+      "binary_proportion_normalized": -0.8417903930131004,
+      "summary": "PhD Admissions, Interdisciplinary Transitions, and Career Prospects in STEM Fields (focus on Computer Science, Mathematics, and Physics)."
     },
     "7299": {
       "id": 7299,
@@ -94901,7 +94954,8 @@
       ],
       "level": 79,
       "binary_proportion": 0.010526315789473684,
-      "binary_proportion_normalized": -0.6186315789473685
+      "binary_proportion_normalized": -0.6186315789473685,
+      "summary": "Advisor-student relationships and management in academia, including communication, conflicts, switching advisors, setting expectations, and resolving issues."
     },
     "7300": {
       "id": 7300,
@@ -95753,7 +95807,8 @@
       ],
       "level": 79,
       "binary_proportion": 0.04886769964243146,
-      "binary_proportion_normalized": 0.02186990513895237
+      "binary_proportion_normalized": 0.02186990513895237,
+      "summary": "PhD supervision, advisor-related issues, toxic supervisor relationships, choosing and contacting potential supervisors."
     },
     "7301": {
       "id": 7301,
@@ -95881,7 +95936,8 @@
       ],
       "level": 86,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD Applications and Admissions in Computer Science and Related Fields; Career Paths and Research Opportunities in Machine Learning, Artificial Intelligence, and Interdisciplinary Fields."
     },
     "7302": {
       "id": 7302,
@@ -96222,7 +96278,8 @@
       ],
       "level": 86,
       "binary_proportion": 0.003048780487804878,
-      "binary_proportion_normalized": -0.8895426829268293
+      "binary_proportion_normalized": -0.8895426829268293,
+      "summary": "Graduate education and career paths in mathematics, statistics, physics, and their intersections with other fields."
     },
     "7303": {
       "id": 7303,
@@ -96312,7 +96369,8 @@
       ],
       "level": 70,
       "binary_proportion": 0.07792207792207792,
-      "binary_proportion_normalized": 0.05174898901836171
+      "binary_proportion_normalized": 0.05174898901836171,
+      "summary": "Authorship and ethical issues in academic publishing, particularly focusing on authorship disputes, contributions, order of authors, sole authorship, supervisor\u2013student collaboration, and conflicts in publication consent."
     },
     "7304": {
       "id": 7304,
@@ -96789,7 +96847,8 @@
       ],
       "level": 70,
       "binary_proportion": 0.03879310344827586,
-      "binary_proportion_normalized": 0.011509342547006373
+      "binary_proportion_normalized": 0.011509342547006373,
+      "summary": "PhD thesis writing, literature review, academic publishing, and research ethics."
     },
     "7305": {
       "id": 7305,
@@ -96811,7 +96870,8 @@
       ],
       "level": 74,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor-student relationship and communication."
     },
     "7306": {
       "id": 7306,
@@ -96899,7 +96959,8 @@
       ],
       "level": 74,
       "binary_proportion": 0.01282051282051282,
-      "binary_proportion_normalized": -0.5355128205128206
+      "binary_proportion_normalized": -0.5355128205128206,
+      "summary": "Advisor-student relationship dynamics, including challenges with compatibility, communication, expectations, and resolving conflicts or switching advisors."
     },
     "7307": {
       "id": 7307,
@@ -97230,7 +97291,8 @@
       ],
       "level": 69,
       "binary_proportion": 0.03773584905660377,
-      "binary_proportion_normalized": 0.01042207809596238
+      "binary_proportion_normalized": 0.01042207809596238,
+      "summary": "PhD thesis writing, structure, and organization and academic publishing requirements, strategies, and impact on academic careers."
     },
     "7308": {
       "id": 7308,
@@ -97387,7 +97449,8 @@
       ],
       "level": 69,
       "binary_proportion": 0.041666666666666664,
-      "binary_proportion_normalized": 0.014464471567792599
+      "binary_proportion_normalized": 0.014464471567792599,
+      "summary": "Peer review and publication process, plagiarism and academic integrity, authorship and copyright issues, and thesis acknowledgments and related protocols."
     },
     "7309": {
       "id": 7309,
@@ -97523,7 +97586,8 @@
       ],
       "level": 65,
       "binary_proportion": 0.04065040650406504,
-      "binary_proportion_normalized": 0.013419364962880398
+      "binary_proportion_normalized": 0.013419364962880398,
+      "summary": "Academic publishing, peer review processes, authorship ethics, plagiarism, and PhD thesis-related issues (e.g., acknowledgments, intellectual property, and revisions)."
     },
     "7310": {
       "id": 7310,
@@ -97550,7 +97614,8 @@
       ],
       "level": 65,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic publishing and conference participation in the context of PhD studies."
     },
     "7311": {
       "id": 7311,
@@ -97669,7 +97734,8 @@
       ],
       "level": 62,
       "binary_proportion": 0.0660377358490566,
-      "binary_proportion_normalized": 0.03952731109313996
+      "binary_proportion_normalized": 0.03952731109313996,
+      "summary": "PhD thesis writing, formatting, structure, and academic publishing practices."
     },
     "7312": {
       "id": 7312,
@@ -97887,7 +97953,8 @@
       ],
       "level": 62,
       "binary_proportion": 0.024390243902439025,
-      "binary_proportion_normalized": -0.11634146341463412
+      "binary_proportion_normalized": -0.11634146341463412,
+      "summary": "Academic publishing, with a focus on its role in PhD applications, progression, and postdoctoral opportunities, and evaluating the impact of publications (quality, quantity, timing, and type) on academic careers."
     },
     "7313": {
       "id": 7313,
@@ -97938,7 +98005,8 @@
       ],
       "level": 64,
       "binary_proportion": 0.07317073170731707,
-      "binary_proportion_normalized": 0.04686277632007089
+      "binary_proportion_normalized": 0.04686277632007089,
+      "summary": "Peer review, academic publishing, and the manuscript submission process."
     },
     "7314": {
       "id": 7314,
@@ -98031,7 +98099,8 @@
       ],
       "level": 64,
       "binary_proportion": 0.025,
-      "binary_proportion_normalized": -0.09424999999999996
+      "binary_proportion_normalized": -0.09424999999999996,
+      "summary": "Academic integrity, plagiarism, authorship, copyright, and acknowledgements in the context of PhD dissertations and research ethics."
     },
     "7315": {
       "id": 7315,
@@ -100706,7 +100775,8 @@
       ],
       "level": 93,
       "binary_proportion": 0.019534184823441023,
-      "binary_proportion_normalized": -0.2922764838467317
+      "binary_proportion_normalized": -0.2922764838467317,
+      "summary": "PhD application process, PhD research preparation, choosing PhD topics and advisors, navigating academic and career transitions, PhD funding and financial challenges, managing motivation and mental health during PhD, changing or leaving PhD programs, interdisciplinary research and switching fields, geographical and institutional considerations for PhD studies."
     },
     "7316": {
       "id": 7316,
@@ -100874,7 +100944,8 @@
       ],
       "level": 93,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "The impact of grades and GPA on PhD admissions and strategies for addressing poor academic performance or transcripts in applications."
     },
     "7317": {
       "id": 7317,
@@ -100900,7 +100971,8 @@
       ],
       "level": 55,
       "binary_proportion": 0.125,
-      "binary_proportion_normalized": 0.10016321317059325
+      "binary_proportion_normalized": 0.10016321317059325,
+      "summary": "Academic publishing, literature review writing, and conference participation for PhD students."
     },
     "7318": {
       "id": 7318,
@@ -101000,7 +101072,8 @@
       ],
       "level": 55,
       "binary_proportion": 0.05747126436781609,
-      "binary_proportion_normalized": 0.03071768118211686
+      "binary_proportion_normalized": 0.03071768118211686,
+      "summary": "PhD thesis writing, formatting, and citation practices."
     },
     "7319": {
       "id": 7319,
@@ -101103,7 +101176,8 @@
       ],
       "level": 89,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "GPA, grades, and their impact on graduate school and PhD admissions and career prospects."
     },
     "7320": {
       "id": 7320,
@@ -101178,7 +101252,8 @@
       ],
       "level": 89,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Explaining and addressing poor academic performance or grades on transcripts in PhD applications and PhD qualifying exams, their significance, failure, and appeals."
     },
     "7321": {
       "id": 7321,
@@ -101247,7 +101322,8 @@
       ],
       "level": 59,
       "binary_proportion": 0.017857142857142856,
-      "binary_proportion_normalized": -0.35303571428571434
+      "binary_proportion_normalized": -0.35303571428571434,
+      "summary": "Copyright and intellectual property, plagiarism and academic integrity, and dissertation acknowledgements."
     },
     "7322": {
       "id": 7322,
@@ -101272,7 +101348,8 @@
       ],
       "level": 59,
       "binary_proportion": 0.06666666666666667,
-      "binary_proportion_normalized": 0.04017409404863279
+      "binary_proportion_normalized": 0.04017409404863279,
+      "summary": "Academic publishing, authorship, and ethical considerations in research."
     },
     "7323": {
       "id": 7323,
@@ -101297,7 +101374,8 @@
       ],
       "level": 85,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic transcripts and their role in PhD admissions and applications."
     },
     "7324": {
       "id": 7324,
@@ -101349,7 +101427,8 @@
       ],
       "level": 85,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Explaining poor academic performance in PhD applications/interviews and handling qualifying exam failure."
     },
     "7325": {
       "id": 7325,
@@ -101388,7 +101467,8 @@
       ],
       "level": 36,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic integrity, plagiarism, and ethical concerns in PhD theses."
     },
     "7326": {
       "id": 7326,
@@ -101410,7 +101490,8 @@
       ],
       "level": 36,
       "binary_proportion": 0.08333333333333333,
-      "binary_proportion_normalized": 0.05731384236919292
+      "binary_proportion_normalized": 0.05731384236919292,
+      "summary": "PhD thesis acknowledgements and related etiquette."
     },
     "7327": {
       "id": 7327,
@@ -101473,7 +101554,8 @@
       ],
       "level": 67,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD admissions, preparation, and career paths in Computer Science, including interdisciplinary transitions and program-specific considerations."
     },
     "7328": {
       "id": 7328,
@@ -101509,7 +101591,8 @@
       ],
       "level": 67,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Career paths, interdisciplinary opportunities, and challenges in pursuing a PhD or academic career in Machine Learning, Artificial Intelligence, Computer Science, and related fields."
     },
     "7329": {
       "id": 7329,
@@ -101543,7 +101626,8 @@
       ],
       "level": 81,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD Qualifying Exams: Preparation, performance evaluation, impact of failure, and coping strategies."
     },
     "7330": {
       "id": 7330,
@@ -101563,7 +101647,8 @@
       ],
       "level": 81,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Explaining poor academic performance or low grades in PhD applications."
     },
     "7331": {
       "id": 7331,
@@ -101688,7 +101773,8 @@
       ],
       "level": 90,
       "binary_proportion": 0.017391304347826087,
-      "binary_proportion_normalized": -0.3699130434782609
+      "binary_proportion_normalized": -0.3699130434782609,
+      "summary": "PhD and graduate school applications, with a focus on structuring, writing, and tailoring academic CVs/resumes, Statements of Purpose (SOPs), and addressing incomplete or unconventional academic and professional experiences."
     },
     "7332": {
       "id": 7332,
@@ -104224,7 +104310,8 @@
       ],
       "level": 90,
       "binary_proportion": 0.019421323820848196,
-      "binary_proportion_normalized": -0.2963654379706699
+      "binary_proportion_normalized": -0.2963654379706699,
+      "summary": "PhD applications, admissions strategies, transfer policies, motivation struggles, project selection, research proposal composition, funding challenges, and academic career transitions."
     },
     "7333": {
       "id": 7333,
@@ -104358,7 +104445,8 @@
       ],
       "level": 43,
       "binary_proportion": 0.008264462809917356,
-      "binary_proportion_normalized": -0.7005785123966942
+      "binary_proportion_normalized": -0.7005785123966942,
+      "summary": "PhD-related academic publishing: strategies, significance, and implications for admission, career progression, and thesis/dissertation development."
     },
     "7334": {
       "id": 7334,
@@ -104429,7 +104517,8 @@
       ],
       "level": 43,
       "binary_proportion": 0.06557377049180328,
-      "binary_proportion_normalized": 0.03905017612597312
+      "binary_proportion_normalized": 0.03905017612597312,
+      "summary": "Academic publishing and its impact on graduate studies, including journal selection, publishing strategies, and its influence on PhD applications and career progression."
     },
     "7335": {
       "id": 7335,
@@ -104678,7 +104767,8 @@
       ],
       "level": 46,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Graduate admissions and career prospects in mathematics and statistics."
     },
     "7336": {
       "id": 7336,
@@ -104745,7 +104835,8 @@
       ],
       "level": 46,
       "binary_proportion": 0.018518518518518517,
-      "binary_proportion_normalized": -0.32907407407407413
+      "binary_proportion_normalized": -0.32907407407407413,
+      "summary": "Academic transitions, interdisciplinary pathways, and career planning in physics and mathematics doctoral studies."
     },
     "7337": {
       "id": 7337,
@@ -104779,7 +104870,8 @@
       ],
       "level": 9,
       "binary_proportion": 0.041666666666666664,
-      "binary_proportion_normalized": 0.014464471567792599
+      "binary_proportion_normalized": 0.014464471567792599,
+      "summary": "Authorship disputes and ethical concerns in academic publishing, specifically focusing on PhD students and their supervisors."
     },
     "7338": {
       "id": 7338,
@@ -104805,7 +104897,8 @@
       ],
       "level": 9,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Authorship and publication ethics in relation to PhD supervisors."
     },
     "7339": {
       "id": 7339,
@@ -104842,7 +104935,8 @@
       ],
       "level": 23,
       "binary_proportion": 0.14814814814814814,
-      "binary_proportion_normalized": 0.12396841917137119
+      "binary_proportion_normalized": 0.12396841917137119,
+      "summary": "PhD thesis structure, organization, and writing."
     },
     "7340": {
       "id": 7340,
@@ -104889,7 +104983,8 @@
       ],
       "level": 23,
       "binary_proportion": 0.02702702702702703,
-      "binary_proportion_normalized": -0.02081081081081076
+      "binary_proportion_normalized": -0.02081081081081076,
+      "summary": "PhD thesis writing, formatting, and citation practices."
     },
     "7341": {
       "id": 7341,
@@ -104916,7 +105011,8 @@
       ],
       "level": 39,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic publishing, dissemination of PhD research, and the relationship between theses, journal articles, and books."
     },
     "7342": {
       "id": 7342,
@@ -105028,7 +105124,8 @@
       ],
       "level": 39,
       "binary_proportion": 0.010101010101010102,
-      "binary_proportion_normalized": -0.634040404040404
+      "binary_proportion_normalized": -0.634040404040404,
+      "summary": "Role and impact of publications in PhD admissions, progress, and academic careers and Writing samples and publication-based PhD requirements."
     },
     "7343": {
       "id": 7343,
@@ -105076,7 +105173,8 @@
       ],
       "level": 35,
       "binary_proportion": 0.02631578947368421,
-      "binary_proportion_normalized": -0.04657894736842111
+      "binary_proportion_normalized": -0.04657894736842111,
+      "summary": "The role, significance, and impact of publications on PhD admissions, progress, and postdoc career prospects."
     },
     "7344": {
       "id": 7344,
@@ -105146,7 +105244,8 @@
       ],
       "level": 35,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic publications and their role in PhD processes and writing samples for PhD applications."
     },
     "7345": {
       "id": 7345,
@@ -105174,7 +105273,8 @@
       ],
       "level": 10,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Interdisciplinary transitions and prerequisites for pursuing PhDs in mathematics, physics, or related fields."
     },
     "7346": {
       "id": 7346,
@@ -105208,7 +105308,8 @@
       ],
       "level": 10,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Career transitions, research focus, skill development, and career prospects in physics PhD programs."
     },
     "7347": {
       "id": 7347,
@@ -105245,7 +105346,8 @@
       ],
       "level": 16,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Publishing expectations, paper productivity, and timelines in graduate (Master's and PhD) programs."
     },
     "7348": {
       "id": 7348,
@@ -105266,7 +105368,8 @@
       ],
       "level": 16,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Writing samples, thesis, and academic paper preparation for PhD applications and research."
     },
     "7349": {
       "id": 7349,
@@ -105291,7 +105394,8 @@
       ],
       "level": 15,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD admissions with low or mediocre GPA and mitigating factors."
     },
     "7350": {
       "id": 7350,
@@ -105320,7 +105424,8 @@
       ],
       "level": 15,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "The impact of grades on PhD admissions and career prospects, and compensating for poor grades with other strengths such as publications, research experience, and recommendations."
     },
     "7351": {
       "id": 7351,
@@ -105350,7 +105455,8 @@
       ],
       "level": 18,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD program decision-making and preparation, with a focus on mathematics, statistics, and related fields."
     },
     "7352": {
       "id": 7352,
@@ -105546,7 +105652,8 @@
       ],
       "level": 18,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Graduate admissions, career prospects, and transitioning between fields in mathematics-focused PhD programs."
     },
     "7353": {
       "id": 7353,
@@ -105749,7 +105856,8 @@
       ],
       "level": 88,
       "binary_proportion": 0.03684210526315789,
-      "binary_proportion_normalized": 0.009502965474998876
+      "binary_proportion_normalized": 0.009502965474998876,
+      "summary": "PhD funding, scholarships, stipends, self-funding, and financial challenges for PhD students across different countries."
     },
     "7354": {
       "id": 7354,
@@ -108043,7 +108151,8 @@
       ],
       "level": 88,
       "binary_proportion": 0.01797457255589654,
-      "binary_proportion_normalized": -0.3487812362998684
+      "binary_proportion_normalized": -0.3487812362998684,
+      "summary": "PhD Admissions, Research Topics, and Challenges"
     },
     "7355": {
       "id": 7355,
@@ -108063,7 +108172,8 @@
       ],
       "level": 58,
       "binary_proportion": 0.2,
-      "binary_proportion_normalized": 0.17729208061311386
+      "binary_proportion_normalized": 0.17729208061311386,
+      "summary": "Advisor communication about personal challenges, mental health, and academic concerns (e.g., productivity, research topic changes, thesis adjustments)."
     },
     "7356": {
       "id": 7356,
@@ -108805,7 +108915,8 @@
       ],
       "level": 58,
       "binary_proportion": 0.04252400548696845,
-      "binary_proportion_normalized": 0.01534614586411771
+      "binary_proportion_normalized": 0.01534614586411771,
+      "summary": "PhD supervision dynamics, including choosing, communicating, managing relationships, switching, and assessing potential supervisors."
     },
     "7357": {
       "id": 7357,
@@ -108839,7 +108950,8 @@
       ],
       "level": 87,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Graduate and PhD academic requirements, coursework decisions, admissions considerations, and the impact of academic failures."
     },
     "7358": {
       "id": 7358,
@@ -111100,7 +111212,8 @@
       ],
       "level": 87,
       "binary_proportion": 0.018238434163701068,
-      "binary_proportion_normalized": -0.33922153024911034
+      "binary_proportion_normalized": -0.33922153024911034,
+      "summary": "PhD admissions, research proposal formulation, choosing a PhD topic, navigating interdisciplinary or unconventional backgrounds, challenges in defining research scope, and transitioning between or within PhD programs."
     },
     "7359": {
       "id": 7359,
@@ -111120,7 +111233,8 @@
       ],
       "level": 7,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Interdisciplinary paths and qualifications for pursuing PhD programs and research at the intersection of mathematics and computer science."
     },
     "7360": {
       "id": 7360,
@@ -111270,7 +111384,8 @@
       ],
       "level": 7,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD applications, academic requirements, career prospects, and research areas in mathematics (pure and applied)."
     },
     "7361": {
       "id": 7361,
@@ -111352,7 +111467,8 @@
       ],
       "level": 5,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD in Mathematics: career prospects, transitions between pure and applied math, program expectations, funding, and impacts on academia and industry."
     },
     "7362": {
       "id": 7362,
@@ -111397,7 +111513,8 @@
       ],
       "level": 5,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Math PhD applications, admissions criteria, and program considerations."
     },
     "7363": {
       "id": 7363,
@@ -111503,7 +111620,8 @@
       ],
       "level": 51,
       "binary_proportion": 0.021505376344086023,
-      "binary_proportion_normalized": -0.22086021505376338
+      "binary_proportion_normalized": -0.22086021505376338,
+      "summary": "PhD funding and financial support sources."
     },
     "7364": {
       "id": 7364,
@@ -111534,7 +111652,8 @@
       ],
       "level": 51,
       "binary_proportion": 0.09523809523809523,
-      "binary_proportion_normalized": 0.06955651974102159
+      "binary_proportion_normalized": 0.06955651974102159,
+      "summary": "PhD scholarships, funding opportunities, and financial considerations for international students."
     },
     "7365": {
       "id": 7365,
@@ -111586,7 +111705,8 @@
       ],
       "level": 2,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD in Mathematics: Career paths (academic and non-academic), research preparation, program structure, teaching opportunities, and post-graduation prospects."
     },
     "7366": {
       "id": 7366,
@@ -111613,7 +111733,8 @@
       ],
       "level": 2,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Applying for and pursuing a PhD in mathematics: prerequisites, competitiveness, program structures, and career considerations."
     },
     "7367": {
       "id": 7367,
@@ -111646,7 +111767,8 @@
       ],
       "level": 49,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor relationships, roles, and challenges; co-supervision dynamics; and decisions around changing or selecting supervisors."
     },
     "7368": {
       "id": 7368,
@@ -112293,7 +112415,8 @@
       ],
       "level": 49,
       "binary_proportion": 0.04258675078864353,
-      "binary_proportion_normalized": 0.015410672184858223
+      "binary_proportion_normalized": 0.015410672184858223,
+      "summary": "PhD advisor-student relationships, including supervision styles, conflict resolution, effective communication, advisor selection, navigating toxic or challenging supervision, and strategies for reaching out to potential supervisors."
     },
     "7369": {
       "id": 7369,
@@ -112314,7 +112437,8 @@
       ],
       "level": 13,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD and graduate student funding challenges and options."
     },
     "7370": {
       "id": 7370,
@@ -112380,7 +112504,8 @@
       ],
       "level": 13,
       "binary_proportion": 0.018867924528301886,
-      "binary_proportion_normalized": -0.31641509433962267
+      "binary_proportion_normalized": -0.31641509433962267,
+      "summary": "PhD funding sources, mechanisms, and strategies across regions (primarily the UK and US), including self-funding, grants, scholarships, and departmental or government funding."
     },
     "7371": {
       "id": 7371,
@@ -112620,7 +112745,8 @@
       ],
       "level": 42,
       "binary_proportion": 0.0881057268722467,
-      "binary_proportion_normalized": 0.06222169981781147
+      "binary_proportion_normalized": 0.06222169981781147,
+      "summary": "PhD supervision challenges, including toxic, negligent, or overly demanding supervisors, conflicts with peers, and strategies for addressing academic and professional issues related to supervision and collegial relationships."
     },
     "7372": {
       "id": 7372,
@@ -113008,7 +113134,8 @@
       ],
       "level": 42,
       "binary_proportion": 0.008,
-      "binary_proportion_normalized": -0.71016
+      "binary_proportion_normalized": -0.71016,
+      "summary": "PhD advisor selection, relationships, and communication and emailing/contacting potential PhD supervisors effectively."
     },
     "7373": {
       "id": 7373,
@@ -113063,7 +113190,8 @@
       ],
       "level": 37,
       "binary_proportion": 0.023809523809523808,
-      "binary_proportion_normalized": -0.13738095238095244
+      "binary_proportion_normalized": -0.13738095238095244,
+      "summary": "PhD advisor selection, roles, dynamics, and challenges in student-supervisor relationships."
     },
     "7374": {
       "id": 7374,
@@ -113398,7 +113526,8 @@
       ],
       "level": 37,
       "binary_proportion": 0.006211180124223602,
-      "binary_proportion_normalized": -0.774968944099379
+      "binary_proportion_normalized": -0.774968944099379,
+      "summary": "PhD advisor selection, transition, communication, and etiquette; contacting and communicating with prospective PhD supervisors."
     },
     "7375": {
       "id": 7375,
@@ -113419,7 +113548,8 @@
       ],
       "level": 1,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD funding opportunities, sources, and strategies, with a focus on the UK and international students."
     },
     "7376": {
       "id": 7376,
@@ -113442,7 +113572,8 @@
       ],
       "level": 1,
       "binary_proportion": 0.07692307692307693,
-      "binary_proportion_normalized": 0.050721631476669804
+      "binary_proportion_normalized": 0.050721631476669804,
+      "summary": "PhD funding sources, policies, and financial support options."
     },
     "7377": {
       "id": 7377,
@@ -113463,7 +113594,8 @@
       ],
       "level": 20,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor selection and its impact on academic success."
     },
     "7378": {
       "id": 7378,
@@ -113485,7 +113617,8 @@
       ],
       "level": 20,
       "binary_proportion": 0.08333333333333333,
-      "binary_proportion_normalized": 0.05731384236919292
+      "binary_proportion_normalized": 0.05731384236919292,
+      "summary": "PhD supervisor relationships, their roles, and challenges in navigating conflicts or changes in supervision."
     },
     "7379": {
       "id": 7379,
@@ -113562,7 +113695,8 @@
       ],
       "level": 32,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor relationships, changing advisors or institutions, navigating collaborations, leaving a PhD program, and selecting a dissertation committee."
     },
     "7380": {
       "id": 7380,
@@ -113819,7 +113953,8 @@
       ],
       "level": 32,
       "binary_proportion": 0.00819672131147541,
-      "binary_proportion_normalized": -0.7030327868852458
+      "binary_proportion_normalized": -0.7030327868852458,
+      "summary": "Contacting and communicating with potential PhD or postdoc supervisors, including email etiquette, timing, follow-ups, and strategies for finding suitable academic advisors."
     },
     "7381": {
       "id": 7381,
@@ -113993,7 +114128,8 @@
       ],
       "level": 30,
       "binary_proportion": 0.08074534161490683,
-      "binary_proportion_normalized": 0.05465239076662148
+      "binary_proportion_normalized": 0.05465239076662148,
+      "summary": "PhD Supervisor-Student Relationships and Issues: Dynamics, Challenges, and Conflict Resolution."
     },
     "7382": {
       "id": 7382,
@@ -114036,7 +114172,8 @@
       ],
       "level": 30,
       "binary_proportion": 0.18181818181818182,
-      "binary_proportion_normalized": 0.158594173354321
+      "binary_proportion_normalized": 0.158594173354321,
+      "summary": "Student-supervisor relationship challenges and conflict resolution in academia."
     },
     "7383": {
       "id": 7383,
@@ -114245,7 +114382,8 @@
       ],
       "level": 26,
       "binary_proportion": 0.01020408163265306,
-      "binary_proportion_normalized": -0.6303061224489797
+      "binary_proportion_normalized": -0.6303061224489797,
+      "summary": "Emailing and Correspondence Etiquette with Potential PhD Advisors and Handling Non-Responses."
     },
     "7384": {
       "id": 7384,
@@ -114294,7 +114432,8 @@
       ],
       "level": 26,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Topics: Finding and contacting potential PhD supervisors and Navigating advisor relationships and selection during academic transitions."
     },
     "7385": {
       "id": 7385,
@@ -114331,7 +114470,8 @@
       ],
       "level": 27,
       "binary_proportion": 0.037037037037037035,
-      "binary_proportion_normalized": 0.009703430367637008
+      "binary_proportion_normalized": 0.009703430367637008,
+      "summary": "PhD advisor-student relationships, including advisor responsibilities, communication dynamics, mentoring strategies, and conflict resolution."
     },
     "7386": {
       "id": 7386,
@@ -114475,7 +114615,8 @@
       ],
       "level": 27,
       "binary_proportion": 0.0916030534351145,
-      "binary_proportion_normalized": 0.06581829764275329
+      "binary_proportion_normalized": 0.06581829764275329,
+      "summary": "PhD supervision dynamics, including relationships with supervisors, toxic/abusive behavior, professional ethics, guidance quality, and navigating challenges with peers and advisors."
     },
     "7387": {
       "id": 7387,
@@ -114501,7 +114642,8 @@
       ],
       "level": 14,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor issues, including switching advisors, advisor absences, toxic mentoring environments, collaborations, and choosing or changing advisors."
     },
     "7388": {
       "id": 7388,
@@ -114536,7 +114678,8 @@
       ],
       "level": 14,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD advisor relationships, communication, and decisions, including leaving a program, transferring, funding, collaboration, and thesis committee selection."
     },
     "7389": {
       "id": 7389,
@@ -114599,7 +114742,8 @@
       ],
       "level": 21,
       "binary_proportion": 0.2,
-      "binary_proportion_normalized": 0.17729208061311386
+      "binary_proportion_normalized": 0.17729208061311386,
+      "summary": "Toxic academic environments in PhD programs, including abusive or unsupportive supervisors, peer harassment, bullying, and strategies for coping or addressing these challenges."
     },
     "7390": {
       "id": 7390,
@@ -114674,7 +114818,8 @@
       ],
       "level": 21,
       "binary_proportion": 0.015384615384615385,
-      "binary_proportion_normalized": -0.4426153846153846
+      "binary_proportion_normalized": -0.4426153846153846,
+      "summary": "PhD supervision dynamics and relationships, including challenges with supervisors, ethical and professional issues, and the impact on the student experience and research progress."
     },
     "7391": {
       "id": 7391,
@@ -114702,7 +114847,8 @@
       ],
       "level": 11,
       "binary_proportion": 0.16666666666666666,
-      "binary_proportion_normalized": 0.14301258397199354
+      "binary_proportion_normalized": 0.14301258397199354,
+      "summary": "Challenges with PhD advisors and toxic academic environments."
     },
     "7392": {
       "id": 7392,
@@ -114727,7 +114873,8 @@
       ],
       "level": 11,
       "binary_proportion": 0.4,
-      "binary_proportion_normalized": 0.3829690604598354
+      "binary_proportion_normalized": 0.3829690604598354,
+      "summary": "Toxic work environments, including abusive and exploitative relationships with supervisors, lab mates, and colleagues during a PhD."
     },
     "7393": {
       "id": 7393,
@@ -114800,7 +114947,8 @@
       ],
       "level": 8,
       "binary_proportion": 0.016666666666666666,
-      "binary_proportion_normalized": -0.39616666666666667
+      "binary_proportion_normalized": -0.39616666666666667,
+      "summary": "Contacting potential PhD supervisors and advisors."
     },
     "7394": {
       "id": 7394,
@@ -114888,7 +115036,8 @@
       ],
       "level": 8,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Email etiquette and communication strategies with potential PhD supervisors."
     },
     "7395": {
       "id": 7395,
@@ -114933,7 +115082,8 @@
       ],
       "level": 6,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Email communication and etiquette with potential PhD supervisors and academic contacts."
     },
     "7396": {
       "id": 7396,
@@ -114977,7 +115127,8 @@
       ],
       "level": 6,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Communication with potential PhD supervisors, including follow-up strategies and dealing with unresponsiveness."
     },
     "7397": {
       "id": 7397,
@@ -115000,7 +115151,8 @@
       ],
       "level": 4,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Communicating with potential PhD supervisors through email."
     },
     "7398": {
       "id": 7398,
@@ -115024,7 +115176,8 @@
       ],
       "level": 4,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Email communication with potential PhD supervisors."
     },
     "7399": {
       "id": 7399,
@@ -115069,7 +115222,8 @@
       ],
       "level": 84,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD and Master's thesis structure, methodology, requirements, and their role in academic progression."
     },
     "7400": {
       "id": 7400,
@@ -117080,7 +117234,8 @@
       ],
       "level": 84,
       "binary_proportion": 0.01901901901901902,
-      "binary_proportion_normalized": -0.3109409409409409
+      "binary_proportion_normalized": -0.3109409409409409,
+      "summary": "PhD admissions, application strategies, switching programs, program preparation, research proposal development, topic selection, academic challenges, and motivations for pursuing or leaving a PhD."
     },
     "7401": {
       "id": 7401,
@@ -117113,7 +117268,8 @@
       ],
       "level": 3,
       "binary_proportion": 0.043478260869565216,
-      "binary_proportion_normalized": 0.016327487689592614
+      "binary_proportion_normalized": 0.016327487689592614,
+      "summary": "Contacting professors or principal investigators (PIs) for PhD opportunities and communication etiquette."
     },
     "7402": {
       "id": 7402,
@@ -117135,7 +117291,8 @@
       ],
       "level": 3,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Contacting potential PhD supervisors."
     },
     "7403": {
       "id": 7403,
@@ -117319,7 +117476,8 @@
       ],
       "level": 83,
       "binary_proportion": 0.011695906432748537,
-      "binary_proportion_normalized": -0.5762573099415205
+      "binary_proportion_normalized": -0.5762573099415205,
+      "summary": "PhD applications, admissions criteria, and reapplying after leaving or completing a program."
     },
     "7404": {
       "id": 7404,
@@ -119118,7 +119276,8 @@
       ],
       "level": 83,
       "binary_proportion": 0.020156774916013438,
-      "binary_proportion_normalized": -0.2697200447928332
+      "binary_proportion_normalized": -0.2697200447928332,
+      "summary": "Switching Research Topics During PhD, Changing Programs or Institutions for PhD, and PhD Candidate Decision-Making and Challenges."
     },
     "7405": {
       "id": 7405,
@@ -119193,7 +119352,8 @@
       ],
       "level": 66,
       "binary_proportion": 0.015384615384615385,
-      "binary_proportion_normalized": -0.4426153846153846
+      "binary_proportion_normalized": -0.4426153846153846,
+      "summary": "PhD applications, reapplications, and transitions between programs."
     },
     "7406": {
       "id": 7406,
@@ -119279,7 +119439,8 @@
       ],
       "level": 66,
       "binary_proportion": 0.0136986301369863,
-      "binary_proportion_normalized": -0.5036986301369863
+      "binary_proportion_normalized": -0.5036986301369863,
+      "summary": "PhD application process, including evaluation criteria, strategies, timing, applicant qualifications (e.g., prior experience, incomplete degrees, mismatched research backgrounds), and enhancing application strength."
     },
     "7407": {
       "id": 7407,
@@ -119307,7 +119468,8 @@
       ],
       "level": 57,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD application strategies, timing, and prerequisites."
     },
     "7408": {
       "id": 7408,
@@ -119364,7 +119526,8 @@
       ],
       "level": 57,
       "binary_proportion": 0.022727272727272728,
-      "binary_proportion_normalized": -0.17659090909090908
+      "binary_proportion_normalized": -0.17659090909090908,
+      "summary": "PhD application process, evaluation criteria, and strategies for strengthening applications."
     },
     "7409": {
       "id": 7409,
@@ -119388,7 +119551,8 @@
       ],
       "level": 33,
       "binary_proportion": 0.07142857142857142,
-      "binary_proportion_normalized": 0.04507116499736426
+      "binary_proportion_normalized": 0.04507116499736426,
+      "summary": "PhD application process and strategies to strengthen applications."
     },
     "7410": {
       "id": 7410,
@@ -119421,7 +119585,8 @@
       ],
       "level": 33,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD application evaluation criteria, self-assessment, and factors influencing admissions."
     },
     "7411": {
       "id": 7411,
@@ -119553,7 +119718,8 @@
       ],
       "level": 82,
       "binary_proportion": 0.02459016393442623,
-      "binary_proportion_normalized": -0.10909836065573773
+      "binary_proportion_normalized": -0.10909836065573773,
+      "summary": "Transferring or switching PhD programs, institutions, or fields."
     },
     "7412": {
       "id": 7412,
@@ -121181,7 +121347,8 @@
       ],
       "level": 82,
       "binary_proportion": 0.019195046439628483,
-      "binary_proportion_normalized": -0.30456346749226004
+      "binary_proportion_normalized": -0.30456346749226004,
+      "summary": "PhD Admissions Processes and Requirements, Switching Fields for PhD, PhD Program Selection, Challenges During PhD, Career Transitions Post-PhD, Choosing and Changing Research Topics, Research Motivation and Burnout, PhD Funding and Financial Concerns, Mental Health in Academia, and Interdisciplinary PhD Opportunities."
     },
     "7413": {
       "id": 7413,
@@ -121202,7 +121369,8 @@
       ],
       "level": 78,
       "binary_proportion": 0.09090909090909091,
-      "binary_proportion_normalized": 0.06510463706035663
+      "binary_proportion_normalized": 0.06510463706035663,
+      "summary": "PhD funding, scholarships, and academic systems in Europe, with a focus on France and Scandinavia."
     },
     "7414": {
       "id": 7414,
@@ -122774,7 +122942,8 @@
       ],
       "level": 78,
       "binary_proportion": 0.01860166773572803,
-      "binary_proportion_normalized": -0.3260615779345735
+      "binary_proportion_normalized": -0.3260615779345735,
+      "summary": "PhD funding, admissions, career decisions, switching topics/labs, and motivation/mental health struggles during the PhD journey."
     },
     "7415": {
       "id": 7415,
@@ -122917,7 +123086,8 @@
       ],
       "level": 77,
       "binary_proportion": 0.023076923076923078,
-      "binary_proportion_normalized": -0.1639230769230769
+      "binary_proportion_normalized": -0.1639230769230769,
+      "summary": "PhD program attrition, switching fields, and decisions about quitting or continuing a PhD."
     },
     "7416": {
       "id": 7416,
@@ -124342,7 +124512,8 @@
       ],
       "level": 77,
       "binary_proportion": 0.018413597733711047,
-      "binary_proportion_normalized": -0.3328753541076488
+      "binary_proportion_normalized": -0.3328753541076488,
+      "summary": "PhD Admissions, Research Preparation, choosing Research Topics, Funding/School Reputation, Navigating Career Decisions during or after PhD, and Mental Health/Motivation during PhD."
     },
     "7417": {
       "id": 7417,
@@ -124414,7 +124585,8 @@
       ],
       "level": 76,
       "binary_proportion": 0.016129032258064516,
-      "binary_proportion_normalized": -0.4156451612903226
+      "binary_proportion_normalized": -0.4156451612903226,
+      "summary": "The importance of university rankings, prestige, and reputation in PhD admissions, career prospects, and academic progression."
     },
     "7418": {
       "id": 7418,
@@ -125771,7 +125943,8 @@
       ],
       "level": 76,
       "binary_proportion": 0.018601190476190476,
-      "binary_proportion_normalized": -0.32607886904761907
+      "binary_proportion_normalized": -0.32607886904761907,
+      "summary": "PhD admissions, research proposal development, choosing research topics, interdisciplinary degrees, academic career transitions, and mental health challenges during PhD studies."
     },
     "7419": {
       "id": 7419,
@@ -125795,7 +125968,8 @@
       ],
       "level": 53,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD decision-making, including changing fields, programs, or institutions, and evaluating risks and opportunities associated with these changes."
     },
     "7420": {
       "id": 7420,
@@ -125886,7 +126060,8 @@
       ],
       "level": 53,
       "binary_proportion": 0.012345679012345678,
-      "binary_proportion_normalized": -0.5527160493827161
+      "binary_proportion_normalized": -0.5527160493827161,
+      "summary": "PhD attrition, decision-making about quitting or continuing a PhD, and the implications of leaving a PhD program."
     },
     "7421": {
       "id": 7421,
@@ -127154,7 +127329,8 @@
       ],
       "level": 73,
       "binary_proportion": 0.0199203187250996,
-      "binary_proportion_normalized": -0.2782868525896415
+      "binary_proportion_normalized": -0.2782868525896415,
+      "summary": "PhD Admissions and Eligibility Criteria, Interdisciplinary and Sequential Degrees (PhD, Master's, Bachelor's), Career Pathways and Suitability for Academic, Industry, or Research Roles, Challenges during PhD Journey (Motivation, Mental Health, Choosing Research), Post-PhD Career Options and Gap Years, Dual or Multiple Degrees and Interdisciplinary Research, Regional Differences in PhD Programs (US, Europe, UK), Importance of Prior Academic Background & Transitioning Fields."
     },
     "7422": {
       "id": 7422,
@@ -127218,7 +127394,8 @@
       ],
       "level": 73,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD research topic selection, research proposal development, and formulation of research questions."
     },
     "7423": {
       "id": 7423,
@@ -127385,7 +127562,8 @@
       ],
       "level": 72,
       "binary_proportion": 0.012987012987012988,
-      "binary_proportion_normalized": -0.5294805194805194
+      "binary_proportion_normalized": -0.5294805194805194,
+      "summary": "Graduate school decision-making and strategy (e.g., navigating Master's vs. PhD paths, timing, field alignment, gaps, and qualifications)."
     },
     "7424": {
       "id": 7424,
@@ -128489,7 +128667,8 @@
       ],
       "level": 72,
       "binary_proportion": 0.021081576535288724,
-      "binary_proportion_normalized": -0.23621448212648952
+      "binary_proportion_normalized": -0.23621448212648952,
+      "summary": "PhD admissions and eligibility criteria, navigating a PhD program, career prospects post-PhD (academia vs. industry), and mental health, motivation, and challenges during PhD studies."
     },
     "7425": {
       "id": 7425,
@@ -128518,7 +128697,8 @@
       ],
       "level": 68,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD program selection, transitions, and eligibility criteria."
     },
     "7426": {
       "id": 7426,
@@ -128651,7 +128831,8 @@
       ],
       "level": 68,
       "binary_proportion": 0.008333333333333333,
-      "binary_proportion_normalized": -0.6980833333333334
+      "binary_proportion_normalized": -0.6980833333333334,
+      "summary": "Graduate school application strategies, including the role of master's degrees, gaps in education, and factors influencing PhD admissions."
     },
     "7427": {
       "id": 7427,
@@ -128700,7 +128881,8 @@
       ],
       "level": 25,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD admission criteria, application strategy, and the impact of academic/experience gaps on PhD prospects."
     },
     "7428": {
       "id": 7428,
@@ -128754,7 +128936,8 @@
       ],
       "level": 25,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Relationship between Master's and PhD programs and Deciding the necessity or sequence of pursuing Master's, second Master's, and PhD degrees."
     },
     "7429": {
       "id": 7429,
@@ -129498,7 +129681,8 @@
       ],
       "level": 63,
       "binary_proportion": 0.027359781121751026,
-      "binary_proportion_normalized": -0.008755129958960347
+      "binary_proportion_normalized": -0.008755129958960347,
+      "summary": "Academic career pathways, transitioning between academia and industry, PhD motivation and challenges, alternative PhD formats (e.g., part-time, distance), and coping with mental health issues during PhD/postdoc studies."
     },
     "7430": {
       "id": 7430,
@@ -129741,7 +129925,8 @@
       ],
       "level": 63,
       "binary_proportion": 0.013043478260869565,
-      "binary_proportion_normalized": -0.5274347826086957
+      "binary_proportion_normalized": -0.5274347826086957,
+      "summary": "PhD Application Procedures and Requirements Across Different Countries, Interdisciplinary and Multiple PhDs."
     },
     "7431": {
       "id": 7431,
@@ -130118,7 +130303,8 @@
       ],
       "level": 61,
       "binary_proportion": 0.019230769230769232,
-      "binary_proportion_normalized": -0.30326923076923074
+      "binary_proportion_normalized": -0.30326923076923074,
+      "summary": "PhD Career Paths, Feasibility, and Work-Life Balance (Academia vs. Industry), Post-PhD Opportunities (e.g., Postdocs, Faculty Roles), PhD Application and Admission Process, and Remote/Part-Time PhD Options."
     },
     "7432": {
       "id": 7432,
@@ -130477,7 +130663,8 @@
       ],
       "level": 61,
       "binary_proportion": 0.03757225433526012,
-      "binary_proportion_normalized": 0.010253839754938236
+      "binary_proportion_normalized": 0.010253839754938236,
+      "summary": "PhD experiences: motivation, mental health, research challenges, progress management, career planning, and transitions within or out of academia."
     },
     "7433": {
       "id": 7433,
@@ -130614,7 +130801,8 @@
       ],
       "level": 56,
       "binary_proportion": 0.016129032258064516,
-      "binary_proportion_normalized": -0.4156451612903226
+      "binary_proportion_normalized": -0.4156451612903226,
+      "summary": "Comparison of PhD systems, admission procedures, and qualifications across the US, Europe, and other regions."
     },
     "7434": {
       "id": 7434,
@@ -130711,7 +130899,8 @@
       ],
       "level": 56,
       "binary_proportion": 0.011904761904761904,
-      "binary_proportion_normalized": -0.5686904761904762
+      "binary_proportion_normalized": -0.5686904761904762,
+      "summary": "PhD and advanced degree pathways, including interdisciplinary studies, dual or multiple PhDs, eligibility criteria, and the feasibility of pursuing degrees simultaneously or in different fields."
     },
     "7435": {
       "id": 7435,
@@ -131055,7 +131244,8 @@
       ],
       "level": 60,
       "binary_proportion": 0.01812688821752266,
-      "binary_proportion_normalized": -0.343262839879154
+      "binary_proportion_normalized": -0.343262839879154,
+      "summary": "PhD research, admission, and program logistics,Balancing PhD studies with work and personal life,Career transitions between academia and industry, and Postdoc or faculty positions after completing a PhD."
     },
     "7436": {
       "id": 7436,
@@ -131087,7 +131277,8 @@
       ],
       "level": 60,
       "binary_proportion": 0.045454545454545456,
-      "binary_proportion_normalized": 0.01835986891337445
+      "binary_proportion_normalized": 0.01835986891337445,
+      "summary": "Purpose, goals, and value of pursuing a PhD; characteristics of high-quality PhD research; networking and career pathways within and outside academia; and practical aspects of undertaking a PhD."
     },
     "7437": {
       "id": 7437,
@@ -131150,7 +131341,8 @@
       ],
       "level": 44,
       "binary_proportion": 0.018867924528301886,
-      "binary_proportion_normalized": -0.31641509433962267
+      "binary_proportion_normalized": -0.31641509433962267,
+      "summary": "Interdisciplinary and multiple advanced degrees: feasibility, benefits, challenges, and career implications."
     },
     "7438": {
       "id": 7438,
@@ -131170,7 +131362,8 @@
       ],
       "level": 44,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic qualifications, degree prerequisites, and career impacts in relation to pursuing or applying for Ph.D. programs or academic positions."
     },
     "7439": {
       "id": 7439,
@@ -131220,7 +131413,8 @@
       ],
       "level": 54,
       "binary_proportion": 0.025,
-      "binary_proportion_normalized": -0.09424999999999996
+      "binary_proportion_normalized": -0.09424999999999996,
+      "summary": "Balancing employment and financial considerations with pursuing full-time or part-time PhD programs."
     },
     "7440": {
       "id": 7440,
@@ -131499,7 +131693,8 @@
       ],
       "level": 54,
       "binary_proportion": 0.018796992481203006,
-      "binary_proportion_normalized": -0.3189849624060151
+      "binary_proportion_normalized": -0.3189849624060151,
+      "summary": "PhD career pathways and decision-making, including academia vs. industry, postdoc positions, and alternative options; pros and cons of pursuing, pausing, or transitioning within PhD programs; and considerations for international or non-traditional PhD experiences."
     },
     "7441": {
       "id": 7441,
@@ -131577,7 +131772,8 @@
       ],
       "level": 28,
       "binary_proportion": 0.014705882352941176,
-      "binary_proportion_normalized": -0.4672058823529412
+      "binary_proportion_normalized": -0.4672058823529412,
+      "summary": "PhD admissions, structure, and recognition differences between the US, Europe, and other regions."
     },
     "7442": {
       "id": 7442,
@@ -131599,7 +131795,8 @@
       ],
       "level": 28,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD and Master's program application requirements, timelines, and structures in the UK, US, and Canada."
     },
     "7443": {
       "id": 7443,
@@ -131858,7 +132055,8 @@
       ],
       "level": 52,
       "binary_proportion": 0.044715447154471545,
-      "binary_proportion_normalized": 0.01759979138252921
+      "binary_proportion_normalized": 0.01759979138252921,
+      "summary": "Mental health, motivation, and coping during a PhD; Choosing, progressing, and reassessing research direction; Research group dynamics and academic career impact; Navigating challenges and uncertainties in the PhD journey."
     },
     "7444": {
       "id": 7444,
@@ -131917,7 +132115,8 @@
       ],
       "level": 52,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD completion challenges, academic career uncertainty, and transitioning out of academia."
     },
     "7445": {
       "id": 7445,
@@ -131940,7 +132139,8 @@
       ],
       "level": 50,
       "binary_proportion": 0.07692307692307693,
-      "binary_proportion_normalized": 0.050721631476669804
+      "binary_proportion_normalized": 0.050721631476669804,
+      "summary": "PhD modes of enrollment (online, distance learning, external) and feasibility, reputability, and requirements for pursuing doctoral studies."
     },
     "7446": {
       "id": 7446,
@@ -132166,7 +132366,8 @@
       ],
       "level": 50,
       "binary_proportion": 0.014084507042253521,
-      "binary_proportion_normalized": -0.48971830985915493
+      "binary_proportion_normalized": -0.48971830985915493,
+      "summary": "PhD decision-making, career paths, transitions between academia and industry, postdoctoral positions, and balancing personal and professional considerations during and after a PhD."
     },
     "7447": {
       "id": 7447,
@@ -132196,7 +132397,8 @@
       ],
       "level": 48,
       "binary_proportion": 0.05,
-      "binary_proportion_normalized": 0.02303434572807267
+      "binary_proportion_normalized": 0.02303434572807267,
+      "summary": "Career breaks and transitions in academia, including pauses before, during, or after PhD programs, and their impact on academic and professional trajectories."
     },
     "7448": {
       "id": 7448,
@@ -132388,7 +132590,8 @@
       ],
       "level": 48,
       "binary_proportion": 0.00558659217877095,
-      "binary_proportion_normalized": -0.7975977653631284
+      "binary_proportion_normalized": -0.7975977653631284,
+      "summary": "Career paths and decisions related to pursuing, completing, or utilizing a PhD and Transitioning between academia, industry, postdoctoral positions, and teaching roles."
     },
     "7449": {
       "id": 7449,
@@ -132587,7 +132790,8 @@
       ],
       "level": 45,
       "binary_proportion": 0.053763440860215055,
-      "binary_proportion_normalized": 0.026904611477876567
+      "binary_proportion_normalized": 0.026904611477876567,
+      "summary": "Choosing and transitioning research topics, finding research opportunities and mentors, managing motivation and burnout, overcoming challenges in PhD programs, mental health and self-confidence in academia."
     },
     "7450": {
       "id": 7450,
@@ -132617,7 +132821,8 @@
       ],
       "level": 45,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD challenges, including time management, progress assessment, maintaining focus and motivation, research direction changes, commercialization of research, and resource utilization."
     },
     "7451": {
       "id": 7451,
@@ -132674,7 +132879,8 @@
       ],
       "level": 40,
       "binary_proportion": 0.09090909090909091,
-      "binary_proportion_normalized": 0.06510463706035663
+      "binary_proportion_normalized": 0.06510463706035663,
+      "summary": "Starting and navigating a PhD\u2014topics include preparation, research focus, networking, finding mentors and opportunities, managing academic expectations, interdisciplinary exploration, and setting long-term goals."
     },
     "7452": {
       "id": 7452,
@@ -132819,7 +133025,8 @@
       ],
       "level": 40,
       "binary_proportion": 0.045454545454545456,
-      "binary_proportion_normalized": 0.01835986891337445
+      "binary_proportion_normalized": 0.01835986891337445,
+      "summary": "Mental health, motivation, and coping strategies for challenges, failures, and uncertainty in PhD research and academia."
     },
     "7453": {
       "id": 7453,
@@ -132851,7 +133058,8 @@
       ],
       "level": 38,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Research opportunities, choosing and navigating research topics and areas, and strategies for initiating or managing research direction in academia."
     },
     "7454": {
       "id": 7454,
@@ -132882,7 +133090,8 @@
       ],
       "level": 38,
       "binary_proportion": 0.19047619047619047,
-      "binary_proportion_normalized": 0.1674979387156509
+      "binary_proportion_normalized": 0.1674979387156509,
+      "summary": "Starting, preparing for, and succeeding in a PhD journey."
     },
     "7455": {
       "id": 7455,
@@ -133012,7 +133221,8 @@
       ],
       "level": 41,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD career pathways, transitions between academia and industry, and factors influencing academic and professional progression."
     },
     "7456": {
       "id": 7456,
@@ -133062,7 +133272,8 @@
       ],
       "level": 41,
       "binary_proportion": 0.025,
-      "binary_proportion_normalized": -0.09424999999999996
+      "binary_proportion_normalized": -0.09424999999999996,
+      "summary": "PhD decision-making, career planning in academia vs. industry, and practical aspects of pursuing and managing a PhD."
     },
     "7457": {
       "id": 7457,
@@ -133095,7 +133306,8 @@
       ],
       "level": 34,
       "binary_proportion": 0.043478260869565216,
-      "binary_proportion_normalized": 0.016327487689592614
+      "binary_proportion_normalized": 0.016327487689592614,
+      "summary": "PhD challenges and recovery: navigating failures, group changes, poor mental/physical health, and career prospects after setbacks."
     },
     "7458": {
       "id": 7458,
@@ -133202,7 +133414,8 @@
       ],
       "level": 34,
       "binary_proportion": 0.05319148936170213,
-      "binary_proportion_normalized": 0.02631642519371184
+      "binary_proportion_normalized": 0.02631642519371184,
+      "summary": "Mental health, motivation, and self-doubt challenges during the PhD journey."
     },
     "7459": {
       "id": 7459,
@@ -133228,7 +133441,8 @@
       ],
       "level": 24,
       "binary_proportion": 0.125,
-      "binary_proportion_normalized": 0.10016321317059325
+      "binary_proportion_normalized": 0.10016321317059325,
+      "summary": "Research topic selection, struggles with motivation and focus in research, and navigating challenges in academic and research environments."
     },
     "7460": {
       "id": 7460,
@@ -133309,7 +133523,8 @@
       ],
       "level": 24,
       "binary_proportion": 0.029411764705882353,
-      "binary_proportion_normalized": 0.0018617154497336823
+      "binary_proportion_normalized": 0.0018617154497336823,
+      "summary": "PhD student mental health, motivation, and coping strategies."
     },
     "7461": {
       "id": 7461,
@@ -133335,7 +133550,8 @@
       ],
       "level": 29,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Pursuing academic careers, including preparation during PhD for securing postdoc positions or tenure-track faculty roles."
     },
     "7462": {
       "id": 7462,
@@ -133421,7 +133637,8 @@
       ],
       "level": 29,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD decision-making, academic versus industry career pathways, and post-PhD career prospects."
     },
     "7463": {
       "id": 7463,
@@ -133455,7 +133672,8 @@
       ],
       "level": 17,
       "binary_proportion": 0.041666666666666664,
-      "binary_proportion_normalized": 0.014464471567792599
+      "binary_proportion_normalized": 0.014464471567792599,
+      "summary": "Loss of motivation, lack of passion, and strategies for overcoming research struggles during a PhD."
     },
     "7464": {
       "id": 7464,
@@ -133498,7 +133716,8 @@
       ],
       "level": 17,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Mental health challenges, feelings of inadequacy, and coping strategies during a PhD program."
     },
     "7465": {
       "id": 7465,
@@ -133549,7 +133768,8 @@
       ],
       "level": 22,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Career paths and decisions related to pursuing, transitioning from, or leveraging a PhD in academia, industry, and research."
     },
     "7466": {
       "id": 7466,
@@ -133585,7 +133805,8 @@
       ],
       "level": 22,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Career prospects, value, and implications of pursuing a PhD."
     },
     "7467": {
       "id": 7467,
@@ -133609,7 +133830,8 @@
       ],
       "level": 19,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "Academic and industry career transitions, career planning for PhD students, and post-PhD career options."
     },
     "7468": {
       "id": 7468,
@@ -133634,7 +133856,8 @@
       ],
       "level": 19,
       "binary_proportion": 0.0,
-      "binary_proportion_normalized": -1.0
+      "binary_proportion_normalized": -1.0,
+      "summary": "PhD career paths: academia vs. industry, postdoc roles, and the implications of timing and duration in PhD pursuits."
     }
   },
   "binary_attribute": [
