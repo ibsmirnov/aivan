@@ -254,7 +254,61 @@ article {
     }
 }
 
-/* Image containers */
+/* Video containers */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-with-annotation {
+    margin: 2rem 0;
+    width: var(--text-width);
+    clear: both;
+    display: block;
+}
+
+.video-with-annotation figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    text-align: left;
+    float: none;
+    clear: both;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.video-with-annotation figcaption a {
+    color: #666;  /* Make links match the caption color */
+    border-bottom: 1px solid #666;  /* Subtle underline */
+}
+
+.video-with-annotation figcaption a:hover {
+    border-bottom: 1px solid #333;  /* Darker on hover */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 760px) {
+    .video-container,
+    .video-with-annotation {
+        width: 100%;
+    }
+}
+
+/* Images */
 .image-container {
     margin: 2rem 0;
     width: var(--text-width);
@@ -300,55 +354,21 @@ img {
     margin-bottom: 1rem;  /* Space after caption */
 }
 
+.image-with-annotation figcaption a {
+    color: #666;  /* Make links match the caption color */
+    border-bottom: 1px solid #666;  /* Subtle underline */
+}
+
+.image-with-annotation figcaption a:hover {
+    border-bottom: 1px solid #333;  /* Darker on hover */
+}
+
 /* Responsive adjustments for images */
 @media screen and (max-width: 760px) {
-    .image-container {
+    .image-container,
+    .image-with-annotation {
         width: 100%;
     }
-}
-
-/* Responsive video container */
-.video-container {
-    position: relative;
-    padding-bottom: 42.1875%; /* 4:3 aspect ratio for main content width */
-    height: 0;
-    overflow: hidden;
-    max-width: 75%;
-    margin-bottom: 1rem;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-with-annotation {
-    margin: 1em 0;
-    max-width: 75%;
-}
-
-.video-with-annotation figcaption {
-    margin-top: 0.5em;
-    font-style: italic;
-    color: #666;
-    text-align: left;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 760px) {
-    .video-container,
-    .video-with-annotation {
-        max-width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
-    }
-}
-
-/* Images */
-figure img {
-    max-width: 100%;
 }
 
 /* Lists */
@@ -423,74 +443,57 @@ ol li {
     }
 }
 
-/* Margin notes and margin figures */
+/* Margin notes and figures */
 .marginnote {
     float: right;
     clear: right;
     margin-right: -60%;
     width: 50%;
-    margin-top: 0.3rem;
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
     line-height: 1.4;
     vertical-align: baseline;
     position: relative;
-    background-color: var(--background-color);
-}
-
-.margin-toggle {
-    display: none;
-}
-
-.margin-toggle:checked + .marginnote {
-    display: block;
 }
 
 .margin-figure {
     width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
-.marginnote-caption {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-top: 0.5rem;
+/* Hide margin toggle by default */
+.margin-toggle {
+    display: none;
 }
 
-/* For small screens */
+label.margin-toggle:not(.sidenote-number) {
+    display: none;
+}
+
+/* Responsive adjustments for margin notes */
 @media screen and (max-width: 760px) {
     .marginnote {
         display: none;
-        margin-right: 0;
+        float: none;
         width: 100%;
-        max-width: 500px;
+        margin: 0;
     }
 
-    label.margin-toggle {
+    label.margin-toggle:not(.sidenote-number) {
         display: inline;
         color: #777;
     }
 
     .margin-toggle:checked + .marginnote {
         display: block;
-        float: none;
-        left: 0;
+        float: left;
+        left: 1rem;
         clear: both;
         width: 95%;
         margin: 1rem 2.5%;
-        padding: 0.5rem;
+        vertical-align: baseline;
         position: relative;
-    }
-
-    .margin-figure {
-        display: block;
-        width: 100%;
-        margin: 0 auto 1rem auto;
-    }
-
-    .marginnote p {
-        width: 100%;
-        clear: both;
     }
 }
 
