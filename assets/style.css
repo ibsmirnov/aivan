@@ -261,7 +261,7 @@ article {
     height: 0;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;  /* Remove bottom margin since figure will handle spacing */
 }
 
 .video-container iframe {
@@ -272,6 +272,7 @@ article {
     height: 100%;
 }
 
+.video-container-wrapper,
 .video-with-annotation {
     margin: 2rem 0;
     width: var(--text-width);
@@ -302,7 +303,7 @@ article {
 
 /* Mobile responsive adjustments */
 @media (max-width: 760px) {
-    .video-container,
+    .video-container-wrapper,
     .video-with-annotation {
         width: 100%;
     }
