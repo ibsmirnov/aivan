@@ -46,8 +46,8 @@ h3 {
 
 /* Subheading */
 .subheading {
-    font-size: 1.6rem;
-    color: var(--text-color);
+    font-size: 1.4rem;
+    color: #666;
     margin-top: -1rem;
     margin-bottom: 2rem;
     font-style: italic;
