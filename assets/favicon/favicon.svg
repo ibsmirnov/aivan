@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="240" height="240"><svg width="240" height="240" viewBox="0 0 240 240" version="1.1" id="SvgjsSvg1121" sodipodi:docname="icon2.svg" inkscape:version="1.3.2 (091e20e, 2023-11-25)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="SvgjsDefs1120"></defs>
+  <sodipodi:namedview id="SvgjsSodipodi:namedview1119" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="0.98333333" inkscape:cx="120" inkscape:cy="120" inkscape:window-width="1304" inkscape:window-height="449" inkscape:window-x="51" inkscape:window-y="35" inkscape:window-maximized="0" inkscape:current-layer="svg3"></sodipodi:namedview>
+  <!-- Black background -->
+  <rect width="240" height="240" fill="black" id="SvgjsRect1118"></rect>
+  <!-- Letter A using Arial -->
+  <text x="30" y="143.75" font-family="Arial Black" font-size="150" fill="#1dd6fe" id="SvgjsText1117" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">
+    A
+  </text>
+  <text x="30" y="203.75" font-family="Arial Black" font-size="90.5" fill="white" id="SvgjsText1116" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">
+    van
+  </text>
+  <!-- Letter I as a rectangle split diagonally -->
+  <!-- The group is translated so that the top of the rectangle aligns with y=50
+       and the bottom with y=200, matching the A's vertical span. -->
+  <g transform="translate(160,36.25)" id="SvgjsG1115">
+    <!-- Blue triangle: covers the upper-left half of the rectangle -->
+    <polygon points="40,0 0,0 0,107.5" fill="#1dd6fe" id="SvgjsPolygon1114"></polygon>
+    <!-- White triangle: covers the bottom-right half of the rectangle -->
+    <polygon points="40,0 40,107.5, 0,107.5" fill="white" id="SvgjsPolygon1113"></polygon>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
