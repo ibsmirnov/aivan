@@ -195,6 +195,12 @@ a:hover {
     margin-left: auto;
 }
 
+.menu-items {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .site-nav a {
     color: var(--text-color);
     text-decoration: none;
@@ -212,12 +218,21 @@ a:hover {
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
+        width: 100%;
     }
     
     .nav-right {
         margin-left: 0;
+    }
+
+    .menu-items {
+        display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .separator {
+        display: none;  /* Hide separator on mobile */
     }
 }
 
