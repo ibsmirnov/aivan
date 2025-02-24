@@ -355,16 +355,24 @@ article {
 }
 
 /* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.image-with-annotation img[data-width="50"],
+.image-container img[data-width="50"] {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 .image-container {
     margin: 2rem 0;
     width: var(--text-width);
     clear: both;  
-}
-
-img {
-    border: 1px solid #e0e0e0;  
-    border-radius: 5px;  
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
 }
 
 .image-container img {
