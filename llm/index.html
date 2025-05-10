@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Language Model</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Simple Language Model</h1>
+    
+    <div class="controls">
+        <div class="source-selection">
+            <p>Choose text source:</p>
+            <div class="source-buttons">
+                <button class="source-btn" data-source="to_the_lighthouse">To The Lighthouse</button>
+                <button class="source-btn" data-source="buddenbrooks">Buddenbrooks</button>
+                <button class="source-btn" data-source="stackexchange">StackExchange</button>
+                <button class="source-btn" data-source="reddit">Reddit</button>
+            </div>
+            <div id="loading-indicator" class="hidden"><span>Loading text data...</span></div>
+        </div>
+        <p id="status-message"></p>
+        
+        <div class="input-area">
+            <label for="start-word">Start with:</label>
+            <input type="text" id="start-word" placeholder="Enter word(s) to begin">
+            <button id="generate-btn">Generate</button>
+            <button id="autogenerate-btn">Autogenerate (10 words)</button>
+        </div>
+    </div>
+    
+    <div class="output-area">
+        <div class="generated-text">
+            <p id="text-output"></p>
+        </div>
+        
+        <div class="word-options">
+            <h3>Next word options:</h3>
+            <div id="options-container">
+                <!-- Word options will be added here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html> 
