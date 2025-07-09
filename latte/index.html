@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATTE Cluster Tree Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+body {
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Toolbar */
+.top-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    height: 48px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* File Input Icon */
+.file-input-container {
+    position: relative;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-input-label:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.file-input-label svg {
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.file-input-label:hover svg {
+    color: #333;
+}
+
+/* Metadata Inline */
+.metadata-inline {
+    font-size: 13px;
+    color: #666;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    padding: 0 8px;
+    transition: border-color 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: rgb(79, 70, 229);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.search-icon {
+    color: #999;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px 0;
+    width: 200px;
+    font-size: 13px;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.clear-search {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    margin-left: 4px;
+    border-radius: 2px;
+    color: #999;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-search:hover {
+    background: #f0f0f0;
+    color: #666;
+}
+
+/* Level Slider */
+.level-slider-container {
+    display: flex;
+    align-items: center;
+}
+
+.level-slider {
+    width: 120px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.level-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: rgb(79, 70, 229);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.level-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: rgb(79, 70, 229);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.level-slider::-webkit-slider-track {
+    background: #e0e0e0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.level-slider::-moz-range-track {
+    background: #e0e0e0;
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+}
+
+/* Icon Toggles */
+.icon-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.icon-toggle:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.icon-toggle svg {
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.icon-toggle:hover svg {
+    color: #333;
+}
+
+/* Active state for toggles */
+.icon-toggle.active {
+    background: rgb(79, 70, 229);
+    border-color: rgb(79, 70, 229);
+}
+
+.icon-toggle.active svg {
+    color: #ffffff;
+}
+
+.icon-toggle.active:hover {
+    background: rgb(67, 56, 202);
+    border-color: rgb(67, 56, 202);
+}
+
+/* Smart Tooltips */
+.smart-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.smart-tooltip.show {
+    opacity: 1;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0; /* Important: allows flex child to shrink below content size */
+    position: relative;
+}
+
+#tree-container {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    overflow: hidden;
+    min-height: 0; /* Important: allows flex child to shrink below content size */
+}
+
+/* Right Sidebar - Now as overlay */
+.right-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: #f8f9fa;
+    border-left: 1px solid #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    transition: width 0.2s ease;
+}
+
+/* Resize Handle */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+    background: transparent;
+    z-index: 11;
+    user-select: none;
+}
+
+.resize-handle::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60px;
+    background: #999;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.resize-handle:hover::after {
+    opacity: 1;
+    background: #333;
+    width: 4px;
+    height: 80px;
+}
+
+/* Sidebar Empty State */
+.sidebar-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 16px;
+}
+
+.empty-text {
+    color: #999;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Cluster Details */
+.cluster-details {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+/* Cluster Summary */
+.cluster-summary {
+    margin-bottom: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    flex-shrink: 0;
+}
+
+.cluster-summary p {
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.mask-proportion {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Cluster Titles */
+.cluster-titles {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.cluster-titles h4 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.sample-note, .total-count {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+
+.titles-list {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.title-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+}
+
+.title-item:last-child {
+    border-bottom: none;
+}
+
+.title-number {
+    color: #999;
+    font-size: 12px;
+    min-width: 20px;
+    padding-top: 2px;
+}
+
+.title-text {
+    flex: 1;
+    line-height: 1.4;
+    color: #333;
+}
+
+.title-text.search-highlight {
+    background-color: #fff3cd;
+    font-weight: 500;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Bottom Footer */
+.bottom-footer {
+    padding: 8px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.bottom-footer a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottom-footer a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Tree Visualization */
+.node circle {
+    stroke: #333;
+    stroke-width: 1.5px;
+    cursor: pointer;
+}
+
+.node circle.selected {
+    stroke-width: 6px !important;
+}
+
+/* Search highlighting styles - dot indicator */
+.search-dot {
+    fill: #000000;
+    stroke: none;
+    animation: pulse-search-dot 1.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-search-dot {
+    0%, 100% {
+        r: 3;
+        opacity: 0.9;
+    }
+    50% {
+        r: 4;
+        opacity: 1;
+    }
+}
+
+.node text {
+    font: 12px sans-serif;
+    fill: #333;
+}
+
+.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+/* Level filtering via CSS classes */
+.node.level-hidden {
+    display: none;
+}
+
+.link.level-hidden {
+    display: none;
+}
+
+/* Annotation visibility control */
+.annotations.annotations-hidden {
+    display: none;
+}
+
+.annotation-label.level-hidden,
+.annotation-background.level-hidden,
+.annotation-connector.level-hidden {
+    display: none;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    padding: 12px;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    pointer-events: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    max-width: 350px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+/* Annotation Labels */
+.annotation-label {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    fill: #333;
+    text-anchor: middle;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.annotation-background {
+    fill: rgba(255, 255, 255, 0.9);
+    stroke: none;
+    opacity: 1;
+}
+
+.annotation-connector {
+    stroke: #999;
+    stroke-width: 0.5px;
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .right-sidebar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-sidebar {
+        display: none;
+    }
+    
+    .toolbar-left {
+        gap: 10px;
+    }
+    
+    .toolbar-right {
+        gap: 8px;
+    }
+} 
+    </style>
+</head>
+<body>
+    <!-- Top Toolbar -->
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+
+            <div id="metadata" class="metadata-inline" style="display: none;"></div>
+            <div class="search-container" style="display: none;">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search titles..." title="Search in document titles">
+                    <button id="clearSearch" class="clear-search" title="Clear search" style="display: none;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="level-slider-container" style="display: none;">
+                <input type="range" id="levelSlider" class="level-slider" min="0" max="10" value="10" title="Filter by cluster level">
+            </div>
+        </div>
+        
+        <div class="toolbar-right">
+            <div class="icon-toggle" id="showMaskToggle" title="Show mask proportions">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                </svg>
+            </div>
+            <div class="icon-toggle" id="showAnnotationsToggle" title="Show all annotations">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div id="tree-container"></div>
+        <div class="right-sidebar">
+            <div class="resize-handle"></div>
+            <!-- Future content will go here -->
+        </div>
+    </div>
+    
+    <!-- Bottom Footer -->
+    <div class="bottom-footer">
+        <span>powered by <a href="https://github.com/aivan-au/latte" target="_blank">Latte ☕</a></span>
+    </div>
+    
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Embedded visualization data -->
+    <script>
+        const EMBEDDED_DATA = {
+            "metadata": {
+                        "total_documents": 99,
+                        "total_clusters": 27,
+                        "max_level": 13,
+                        "mask_baseline_proportion": 0.09090909090909091,
+                        "mask_min_proportion": 0.0,
+                        "mask_max_proportion": 1.0
+            },
+            "titles": [
+                        "What does (G+) (G++) in terms of male mutation rate and male-heterogametic XY-system?",
+                        "What are the effect of radioactivity on grey wolves in Chernobyl?",
+                        "What is the opposite of a mutation (the regular state)?",
+                        "The smell from eating asparagus",
+                        "Why do people sing?",
+                        "Why are diabetic people often overweight?",
+                        "Laurus Nobilis parasite identification",
+                        "What comes out of this bump in this vegetable?",
+                        "What species is this lizard?",
+                        "Why is the cathode of a lithium-ion battery metallic, which is the opposite of most other batteries?",
+                        "Bond angles of dichlorine and dibromine monoxides",
+                        "Assigning structure based on EPR spectroscopy",
+                        "Mechanism of ring expansion of epoxide",
+                        "Why is Oxygen compulsory for free radical reactions?",
+                        "Kinetic vs thermodynamic control of HBr to 1,3-Butadiene",
+                        "Find the number of copper spheres in a box",
+                        "Definition of \u201csolution\u201d",
+                        "Why will A atoms diffuse from \u03b2 phase to \u03b1 phase and B atoms from \u03b1 phase to \u03b2 phase?",
+                        "Show the edges between the clipping plane and clipped objects",
+                        "How to convert decomposed transformations between different coordinate systems?",
+                        "What sort of implementation dependent limits for glPointSize can one expect from modern graphics cards?",
+                        "Understanding camera of a CPU raytracer from &quot;Ray tracer challenge&quot;",
+                        "Shadow Bug when Raytracing Triangles",
+                        "Does cosine weighted hemisphere sampling still require NdotL when calculating contribution for indirect light?",
+                        "How to generate a 2d histogram?",
+                        "What does $E_L$ mean in the context of shading equations from the book &quot;Real time rendering&quot;?",
+                        "Why does my self-written rendering engine make further away objects look larger?",
+                        "I don't know which is correct in this sentence, &quot;rose&quot; or &quot;raised&quot;",
+                        "Always HAD high hopes or should it be always have high hopes?",
+                        "What does &quot;rather&quot; mean in &quot;rather Jimmy Olsen-ish&quot;?",
+                        "What is the meaning of this sentence? Is it normal to say this or is he scolding me?",
+                        "Meaning of &quot;boilerplate&quot;",
+                        "Meaning of &quot;X is not worth the electrons it was transmitted with&quot;",
+                        "Correct usage in a sentence: kept quiet vs remained quiet",
+                        "When can we use &quot;light&quot;as a countable noun?",
+                        "Is a physicist a specialist, an expert or both?",
+                        "Is this sentence grammatically wrong?",
+                        "Point, points, or points' distribution in space?",
+                        "Conciseness on a Title",
+                        "Meaning of &quot;rather ... nor&quot;",
+                        "Meaning of &quot;reach out to somebody&quot;",
+                        "Does exaggeration imply intent to misrepresent?",
+                        "What is it called when you coin a different version of a word that already exists?",
+                        "What is a word that means single-time optimism?",
+                        "Poetic technique for taking a usually comforting thing in a scary context?",
+                        "How to save a character to be used in all Game States?",
+                        "XNA Multiple Key Input",
+                        "Farseer: RemoveBody is not working",
+                        "Writing a Massive Multiplayer Onlinegame by Own",
+                        "3D model rendered in halftone",
+                        "DirectX 11 Sprite Alpha (Invalid? + Bad Quality)",
+                        "Hide/move the Particle Effect panel on the Scene view window",
+                        "How do you set the target location for a navmesh using a GameObject?",
+                        "Unity - Sprite disappears completely when just a part of it is outside the camera's FOV",
+                        "Is the colour mixer a feature that is not available in CS6?",
+                        "How to combine objects after warping?",
+                        "how to export svg with only lines in illustrator?",
+                        "Creating a Manual in InDesign - How do I make it editable while maintaining format for non-ID users?",
+                        "Make inDesign text box spacing behave like MS Word",
+                        "Generating 'info box' sections in InDesign",
+                        "Brush tool line very faint when using click, shift+click to draw straight lines",
+                        "How do you change the color of multiple shape layers at once in Photoshop?",
+                        "back lit banner DPI question",
+                        "Are American English and British English growing closer together or drifting further apart?",
+                        "Checking Definitions for Self-Consistency and Cycles",
+                        "How to identify mentions in a text?",
+                        "I have read that in Mishnaic Hebrew, some pronounced the 6th letter as waw/w and some as vav/v What is the evidence of this?",
+                        "Where does the term &quot;segment&quot; fit in in relation to &quot;phone&quot; and &quot;phoneme&quot;?",
+                        "Can anybody recommend some textbooks/articles that deal with the adaption of loan words into Spanish?",
+                        "What is syntactically wrong with these sentences?",
+                        "Where can I find formal grammars?",
+                        "Can someone share with me an article that studies the decline of by-phrases in the passive?",
+                        "Converting .CR2 raws to non-raw image format with ImageMagick mogrify makes images warm",
+                        "What kind of lens will be best for photograping cake toppers with a midrange Canon DSLR?",
+                        "Using a Canon 350D as a webcam?",
+                        "What canon lenses should I buy?",
+                        "What makes the Zeiss Otus 1.4/55 so special?",
+                        "How does a spherical lens differ from an aspherical lens?",
+                        "Quiet mode on my DSLR is not quiet enough. How can I make it quieter?",
+                        "Half press on Nikon D90 triggers shooting",
+                        "My Brand New Nikon 50mm f/1.8D giving problem",
+                        "Electric Potential of a sphere given electric field",
+                        "Deriving continuity equation from 4-current of a charged particle",
+                        "Einstein equation and scalar field stress-energy tensor",
+                        "Artificial Gravity - Spinning Station Questions",
+                        "Same amount of calories burned for half the reps and double the weight?",
+                        "How would you explain the weight of an object in a lift accelerating up with acceleration a?",
+                        "Is there a second/many order form of the infinitessimal unitary operator in quantum mechanics?",
+                        "Mathematically, what happens at the screen of the 2-slit experiment?",
+                        "Difference between $\\left \\langle x \\right \\rangle$ and $\\left \\langle \\hat{x} \\right \\rangle$",
+                        "Optimize C# code for finding non-existing objects on List&lt;T&gt;",
+                        "Should reflection be part of design?",
+                        "Would it be bad design to use IDisposable on a class which handles batch updates?",
+                        "Generating combinations without getting stuck in recursive calls",
+                        "Can I put domain services inside domain entities?",
+                        "What is the best way to design a web site to be highly scalable?",
+                        "What to do about many small, semantically similiar types?",
+                        "Try-catch in method or where the method is called?",
+                        "Correct usage of ETags?"
+            ],
+            "clusters": [
+                        {
+                                    "id": 99,
+                                    "level": 13,
+                                    "size": 99,
+                                    "point_indices": [
+                                                79,
+                                                80,
+                                                78,
+                                                59,
+                                                58,
+                                                57,
+                                                56,
+                                                60,
+                                                61,
+                                                55,
+                                                54,
+                                                97,
+                                                98,
+                                                94,
+                                                92,
+                                                96,
+                                                95,
+                                                91,
+                                                73,
+                                                76,
+                                                77,
+                                                75,
+                                                62,
+                                                50,
+                                                46,
+                                                25,
+                                                23,
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52,
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21,
+                                                36,
+                                                27,
+                                                33,
+                                                28,
+                                                65,
+                                                64,
+                                                67,
+                                                70,
+                                                68,
+                                                66,
+                                                63,
+                                                71,
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32,
+                                                40,
+                                                34,
+                                                37,
+                                                69,
+                                                8,
+                                                6,
+                                                7,
+                                                3,
+                                                0,
+                                                1,
+                                                4,
+                                                2,
+                                                11,
+                                                10,
+                                                12,
+                                                9,
+                                                16,
+                                                13,
+                                                17,
+                                                14,
+                                                44,
+                                                41,
+                                                43,
+                                                42,
+                                                35,
+                                                5,
+                                                89,
+                                                87,
+                                                88,
+                                                85,
+                                                84,
+                                                82,
+                                                86,
+                                                83,
+                                                81
+                                    ],
+                                    "parent_id": null,
+                                    "children_ids": [
+                                                100,
+                                                101
+                                    ],
+                                    "annotation": "Software development, programming, linguistics, and physics concepts",
+                                    "mask_proportion": 0.09090909090909091,
+                                    "mask_normalized_proportion": 0.0
+                        },
+                        {
+                                    "id": 100,
+                                    "level": 12,
+                                    "size": 43,
+                                    "point_indices": [
+                                                59,
+                                                58,
+                                                57,
+                                                56,
+                                                60,
+                                                61,
+                                                55,
+                                                54,
+                                                97,
+                                                98,
+                                                94,
+                                                92,
+                                                96,
+                                                95,
+                                                91,
+                                                73,
+                                                76,
+                                                77,
+                                                75,
+                                                62,
+                                                50,
+                                                46,
+                                                25,
+                                                23,
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52,
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 99,
+                                    "children_ids": [
+                                                102,
+                                                103
+                                    ],
+                                    "annotation": "Software development, 3D graphics, photography, and design",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 101,
+                                    "level": 12,
+                                    "size": 53,
+                                    "point_indices": [
+                                                36,
+                                                27,
+                                                33,
+                                                28,
+                                                65,
+                                                64,
+                                                67,
+                                                70,
+                                                68,
+                                                66,
+                                                63,
+                                                71,
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32,
+                                                40,
+                                                34,
+                                                37,
+                                                69,
+                                                8,
+                                                6,
+                                                7,
+                                                3,
+                                                0,
+                                                1,
+                                                4,
+                                                2,
+                                                11,
+                                                10,
+                                                12,
+                                                9,
+                                                16,
+                                                13,
+                                                17,
+                                                14,
+                                                44,
+                                                41,
+                                                43,
+                                                42,
+                                                35,
+                                                5,
+                                                89,
+                                                87,
+                                                88,
+                                                85,
+                                                84,
+                                                82,
+                                                86,
+                                                83,
+                                                81
+                                    ],
+                                    "parent_id": 99,
+                                    "children_ids": [
+                                                104,
+                                                105
+                                    ],
+                                    "annotation": "Language, chemistry, and scientific inquiry",
+                                    "mask_proportion": 0.16981132075471697,
+                                    "mask_normalized_proportion": 0.08679245283018867
+                        },
+                        {
+                                    "id": 102,
+                                    "level": 11,
+                                    "size": 8,
+                                    "point_indices": [
+                                                59,
+                                                58,
+                                                57,
+                                                56,
+                                                60,
+                                                61,
+                                                55,
+                                                54
+                                    ],
+                                    "parent_id": 100,
+                                    "children_ids": [],
+                                    "annotation": "Graphic design software tips and techniques",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 103,
+                                    "level": 11,
+                                    "size": 35,
+                                    "point_indices": [
+                                                97,
+                                                98,
+                                                94,
+                                                92,
+                                                96,
+                                                95,
+                                                91,
+                                                73,
+                                                76,
+                                                77,
+                                                75,
+                                                62,
+                                                50,
+                                                46,
+                                                25,
+                                                23,
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52,
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 100,
+                                    "children_ids": [
+                                                106,
+                                                107
+                                    ],
+                                    "annotation": "Game development, computer graphics, and software programming",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 104,
+                                    "level": 9,
+                                    "size": 22,
+                                    "point_indices": [
+                                                36,
+                                                27,
+                                                33,
+                                                28,
+                                                65,
+                                                64,
+                                                67,
+                                                70,
+                                                68,
+                                                66,
+                                                63,
+                                                71,
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32,
+                                                40,
+                                                34,
+                                                37,
+                                                69
+                                    ],
+                                    "parent_id": 101,
+                                    "children_ids": [
+                                                108,
+                                                109
+                                    ],
+                                    "annotation": "Grammar, vocabulary, and linguistic analysis",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 105,
+                                    "level": 9,
+                                    "size": 31,
+                                    "point_indices": [
+                                                8,
+                                                6,
+                                                7,
+                                                3,
+                                                0,
+                                                1,
+                                                4,
+                                                2,
+                                                11,
+                                                10,
+                                                12,
+                                                9,
+                                                16,
+                                                13,
+                                                17,
+                                                14,
+                                                44,
+                                                41,
+                                                43,
+                                                42,
+                                                35,
+                                                5,
+                                                89,
+                                                87,
+                                                88,
+                                                85,
+                                                84,
+                                                82,
+                                                86,
+                                                83,
+                                                81
+                                    ],
+                                    "parent_id": 101,
+                                    "children_ids": [
+                                                116,
+                                                117
+                                    ],
+                                    "annotation": "Diverse scientific and linguistic inquiries",
+                                    "mask_proportion": 0.2903225806451613,
+                                    "mask_normalized_proportion": 0.21935483870967745
+                        },
+                        {
+                                    "id": 106,
+                                    "level": 10,
+                                    "size": 7,
+                                    "point_indices": [
+                                                97,
+                                                98,
+                                                94,
+                                                92,
+                                                96,
+                                                95,
+                                                91
+                                    ],
+                                    "parent_id": 103,
+                                    "children_ids": [],
+                                    "annotation": "Software design best practices and common issues",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 107,
+                                    "level": 10,
+                                    "size": 28,
+                                    "point_indices": [
+                                                73,
+                                                76,
+                                                77,
+                                                75,
+                                                62,
+                                                50,
+                                                46,
+                                                25,
+                                                23,
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52,
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 103,
+                                    "children_ids": [
+                                                110,
+                                                111
+                                    ],
+                                    "annotation": "3D graphics rendering, image processing, and game development",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 108,
+                                    "level": 8,
+                                    "size": 4,
+                                    "point_indices": [
+                                                36,
+                                                27,
+                                                33,
+                                                28
+                                    ],
+                                    "parent_id": 104,
+                                    "children_ids": [],
+                                    "annotation": "Grammatical correctness and proper word usage in sentences",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 109,
+                                    "level": 8,
+                                    "size": 18,
+                                    "point_indices": [
+                                                65,
+                                                64,
+                                                67,
+                                                70,
+                                                68,
+                                                66,
+                                                63,
+                                                71,
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32,
+                                                40,
+                                                34,
+                                                37,
+                                                69
+                                    ],
+                                    "parent_id": 104,
+                                    "children_ids": [
+                                                112,
+                                                113
+                                    ],
+                                    "annotation": "Linguistics and language analysis",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 110,
+                                    "level": 3,
+                                    "size": 4,
+                                    "point_indices": [
+                                                73,
+                                                76,
+                                                77,
+                                                75
+                                    ],
+                                    "parent_id": 107,
+                                    "children_ids": [],
+                                    "annotation": "Camera lenses and their selection for photography",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 111,
+                                    "level": 3,
+                                    "size": 24,
+                                    "point_indices": [
+                                                62,
+                                                50,
+                                                46,
+                                                25,
+                                                23,
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52,
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 107,
+                                    "children_ids": [
+                                                122,
+                                                123
+                                    ],
+                                    "annotation": "Game development, computer graphics, and image processing",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 112,
+                                    "level": 7,
+                                    "size": 8,
+                                    "point_indices": [
+                                                65,
+                                                64,
+                                                67,
+                                                70,
+                                                68,
+                                                66,
+                                                63,
+                                                71
+                                    ],
+                                    "parent_id": 109,
+                                    "children_ids": [],
+                                    "annotation": "Linguistics and language variation",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 113,
+                                    "level": 7,
+                                    "size": 10,
+                                    "point_indices": [
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32,
+                                                40,
+                                                34,
+                                                37,
+                                                69
+                                    ],
+                                    "parent_id": 109,
+                                    "children_ids": [
+                                                114,
+                                                115
+                                    ],
+                                    "annotation": "English grammar and vocabulary usage",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 114,
+                                    "level": 2,
+                                    "size": 6,
+                                    "point_indices": [
+                                                39,
+                                                29,
+                                                38,
+                                                31,
+                                                30,
+                                                32
+                                    ],
+                                    "parent_id": 113,
+                                    "children_ids": [],
+                                    "annotation": "Understanding word and sentence meanings and effective writing",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 115,
+                                    "level": 2,
+                                    "size": 4,
+                                    "point_indices": [
+                                                40,
+                                                34,
+                                                37,
+                                                69
+                                    ],
+                                    "parent_id": 113,
+                                    "children_ids": [],
+                                    "annotation": "English grammar and usage",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 116,
+                                    "level": 6,
+                                    "size": 13,
+                                    "point_indices": [
+                                                3,
+                                                0,
+                                                1,
+                                                4,
+                                                2,
+                                                11,
+                                                10,
+                                                12,
+                                                9,
+                                                16,
+                                                13,
+                                                17,
+                                                14
+                                    ],
+                                    "parent_id": 105,
+                                    "children_ids": [
+                                                118,
+                                                119
+                                    ],
+                                    "annotation": "Chemistry, biology, and physics phenomena",
+                                    "mask_proportion": 0.38461538461538464,
+                                    "mask_normalized_proportion": 0.32307692307692315
+                        },
+                        {
+                                    "id": 117,
+                                    "level": 6,
+                                    "size": 15,
+                                    "point_indices": [
+                                                44,
+                                                41,
+                                                43,
+                                                42,
+                                                35,
+                                                5,
+                                                89,
+                                                87,
+                                                88,
+                                                85,
+                                                84,
+                                                82,
+                                                86,
+                                                83,
+                                                81
+                                    ],
+                                    "parent_id": 105,
+                                    "children_ids": [
+                                                120,
+                                                121
+                                    ],
+                                    "annotation": "Physics, mathematics, and language analysis",
+                                    "mask_proportion": 0.06666666666666667,
+                                    "mask_normalized_proportion": -0.2666666666666667
+                        },
+                        {
+                                    "id": 118,
+                                    "level": 5,
+                                    "size": 5,
+                                    "point_indices": [
+                                                3,
+                                                0,
+                                                1,
+                                                4,
+                                                2
+                                    ],
+                                    "parent_id": 116,
+                                    "children_ids": [],
+                                    "annotation": "Biological processes and phenomena",
+                                    "mask_proportion": 1.0,
+                                    "mask_normalized_proportion": 1.0
+                        },
+                        {
+                                    "id": 119,
+                                    "level": 5,
+                                    "size": 8,
+                                    "point_indices": [
+                                                11,
+                                                10,
+                                                12,
+                                                9,
+                                                16,
+                                                13,
+                                                17,
+                                                14
+                                    ],
+                                    "parent_id": 116,
+                                    "children_ids": [],
+                                    "annotation": "Physical chemistry concepts and applications",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 120,
+                                    "level": 4,
+                                    "size": 4,
+                                    "point_indices": [
+                                                44,
+                                                41,
+                                                43,
+                                                42
+                                    ],
+                                    "parent_id": 117,
+                                    "children_ids": [],
+                                    "annotation": "Language and literary techniques",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 121,
+                                    "level": 4,
+                                    "size": 11,
+                                    "point_indices": [
+                                                35,
+                                                5,
+                                                89,
+                                                87,
+                                                88,
+                                                85,
+                                                84,
+                                                82,
+                                                86,
+                                                83,
+                                                81
+                                    ],
+                                    "parent_id": 117,
+                                    "children_ids": [],
+                                    "annotation": "Physics and related mathematical concepts",
+                                    "mask_proportion": 0.09090909090909091,
+                                    "mask_normalized_proportion": 0.0
+                        },
+                        {
+                                    "id": 122,
+                                    "level": 1,
+                                    "size": 6,
+                                    "point_indices": [
+                                                48,
+                                                45,
+                                                47,
+                                                51,
+                                                53,
+                                                52
+                                    ],
+                                    "parent_id": 111,
+                                    "children_ids": [],
+                                    "annotation": "Game development using Unity",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 123,
+                                    "level": 1,
+                                    "size": 13,
+                                    "point_indices": [
+                                                15,
+                                                90,
+                                                93,
+                                                74,
+                                                49,
+                                                22,
+                                                26,
+                                                18,
+                                                72,
+                                                20,
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 111,
+                                    "children_ids": [
+                                                124,
+                                                125
+                                    ],
+                                    "annotation": "Computer graphics, programming, and image processing",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 124,
+                                    "level": 0,
+                                    "size": 4,
+                                    "point_indices": [
+                                                26,
+                                                18,
+                                                72,
+                                                20
+                                    ],
+                                    "parent_id": 123,
+                                    "children_ids": [],
+                                    "annotation": "Computer graphics rendering issues and limitations",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        },
+                        {
+                                    "id": 125,
+                                    "level": 0,
+                                    "size": 3,
+                                    "point_indices": [
+                                                24,
+                                                19,
+                                                21
+                                    ],
+                                    "parent_id": 123,
+                                    "children_ids": [],
+                                    "annotation": "Computer graphics and image processing techniques",
+                                    "mask_proportion": 0.0,
+                                    "mask_normalized_proportion": -1.0
+                        }
+            ]
+};
+    </script>
+
+    <!-- Inlined JavaScript modules -->
+    <script>
+        // === js/utils.js ===
+        // Utility functions for LATTE Viewer
+
+// Color utilities
+function rgbaToString(r, g, b, a) {
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+// Text utilities  
+function truncateText(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + "...";
+}
+
+// Math utilities
+function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+}
+
+// Node color calculation utility
+function getNodeColor(cluster, showMask) {
+    if (!showMask) {
+        return "white"; // Show white when toggle is off
+    }
+    
+    // Check if mask_normalized_proportion exists
+    if (cluster.mask_normalized_proportion === undefined) {
+        return "white"; // Default to white if no mask data
+    }
+    
+    const normalizedProp = cluster.mask_normalized_proportion;
+    
+    if (normalizedProp >= 0) {
+        // Positive values: use red with alpha proportional to value
+        const alpha = normalizedProp; // 0 to 1
+        return rgbaToString(239, 68, 68, alpha); // New red color with alpha
+    } else {
+        // Negative values: use blue with alpha proportional to absolute value
+        const alpha = Math.abs(normalizedProp); // 0 to 1 (taking absolute value)
+        return rgbaToString(79, 70, 229, alpha); // New blue color with alpha
+    }
+} 
+
+        // === js/data-manager.js ===
+        // Data Management Module for LATTE Viewer
+
+class DataManager {
+    constructor() {
+        this.data = null;
+        this.currentNodes = null;
+    }
+    
+    // File loading logic
+    loadFromFile(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (this.validateData(data)) {
+                        this.data = data;
+                        resolve(data);
+                    } else {
+                        reject(new Error('Invalid data format'));
+                    }
+                } catch (error) {
+                    reject(new Error('Error parsing JSON file: ' + error.message));
+                }
+            };
+            reader.onerror = () => reject(new Error('Error reading file'));
+            reader.readAsText(file);
+        });
+    }
+    
+    // Embedded data loading
+    loadEmbeddedData(embeddedData) {
+        if (this.validateData(embeddedData)) {
+            this.data = embeddedData;
+            return true;
+        }
+        return false;
+    }
+    
+    // Data validation
+    validateData(data) {
+        return data && 
+               data.metadata && 
+               data.clusters && 
+               Array.isArray(data.clusters) &&
+               data.titles &&
+               Array.isArray(data.titles);
+    }
+    
+    // Get current data
+    getData() {
+        return this.data;
+    }
+    
+    // Get metadata
+    getMetadata() {
+        return this.data ? this.data.metadata : null;
+    }
+    
+    // Get clusters
+    getClusters() {
+        return this.data ? this.data.clusters : null;
+    }
+    
+    // Get titles
+    getTitles() {
+        return this.data ? this.data.titles : null;
+    }
+    
+    // Store current nodes (used by annotation system)
+    setCurrentNodes(nodes) {
+        this.currentNodes = nodes;
+    }
+    
+    // Get current nodes
+    getCurrentNodes() {
+        return this.currentNodes;
+    }
+    
+    // Check if data is loaded
+    hasData() {
+        return this.data !== null;
+    }
+
+    // Search for clusters containing documents with matching titles
+    searchClusters(searchTerm) {
+        if (!this.data || !searchTerm) {
+            return { matchingClusters: new Set(), matchingTitleIndices: new Set() };
+        }
+
+        const normalizedSearchTerm = searchTerm.toLowerCase();
+        const matchingTitleIndices = new Set();
+        const matchingClusters = new Set();
+
+        // Find matching title indices
+        this.data.titles.forEach((title, index) => {
+            if (title.toLowerCase().includes(normalizedSearchTerm)) {
+                matchingTitleIndices.add(index);
+            }
+        });
+
+        // Find clusters that contain any of the matching titles
+        this.data.clusters.forEach(cluster => {
+            if (cluster.point_indices && cluster.point_indices.some(index => matchingTitleIndices.has(index))) {
+                matchingClusters.add(cluster.id);
+            }
+        });
+
+        return { matchingClusters, matchingTitleIndices };
+    }
+} 
+
+        // === js/tree-renderer.js ===
+        // Tree Renderer Module for LATTE Viewer
+
+class TreeRenderer {
+    constructor(containerSelector, dataManager) {
+        this.containerSelector = containerSelector;
+        this.dataManager = dataManager;
+        this.svg = null;
+        this.g = null;
+        this.width = 0;
+        this.height = 0;
+        this.selectedNodeId = null;
+    }
+    
+    // Initialize the SVG and tree container
+    init() {
+        const container = d3.select(this.containerSelector);
+        const containerRect = container.node().getBoundingClientRect();
+        this.width = containerRect.width;
+        this.height = containerRect.height;
+        
+        this.svg = container.append("svg")
+            .attr("width", this.width)
+            .attr("height", this.height);
+        
+        this.g = this.svg.append("g");
+        
+        // Add zoom functionality
+        this.zoom = d3.zoom()
+            .scaleExtent([0.1, 3])
+            .filter((event) => {
+                // Allow zoom/pan only when not clicking on nodes
+                return !event.target.closest('circle');
+            })
+            .on("zoom", (event) => {
+                this.g.attr("transform", event.transform);
+            });
+        
+        this.svg.call(this.zoom);
+    }
+    
+    // Build tree structure from flat cluster list
+    buildTree(clusters) {
+        const clusterMap = new Map();
+        
+        // Create a map of all clusters
+        clusters.forEach(cluster => {
+            clusterMap.set(cluster.id, {
+                ...cluster,
+                children: []
+            });
+        });
+        
+        // Build parent-child relationships
+        let root = null;
+        clusters.forEach(cluster => {
+            if (cluster.parent_id === null) {
+                root = clusterMap.get(cluster.id);
+            } else {
+                const parent = clusterMap.get(cluster.parent_id);
+                if (parent) {
+                    parent.children.push(clusterMap.get(cluster.id));
+                }
+            }
+        });
+        
+        return root;
+    }
+    
+    // Main rendering function - render once, update with CSS classes
+    render() {
+        const data = this.dataManager.getData();
+        if (!data) return;
+        
+        // Only render if not already rendered
+        if (this.g.selectAll('.node').size() > 0) {
+            console.log('Tree already rendered, skipping re-render');
+            return this.dataManager.getCurrentNodes();
+        }
+        
+        // Reset annotation group reference
+        this.annotationGroup = null;
+        
+        // Build tree structure
+        const root = this.buildTree(data.clusters);
+        if (!root) {
+            console.error('No root node found');
+            return;
+        }
+        
+        // Create tree layout
+        const treeLayout = d3.tree()
+            .size([this.width - 100, this.height - 100])
+            .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
+        
+        // Create hierarchy
+        const hierarchy = d3.hierarchy(root);
+        const treeData = treeLayout(hierarchy);
+        
+        // Get nodes and links
+        const nodes = treeData.descendants();
+        const links = treeData.descendants().slice(1);
+        
+        // Store current nodes in data manager
+        this.dataManager.setCurrentNodes(nodes);
+        
+        // Calculate bounds to center the tree
+        const xExtent = d3.extent(nodes, d => d.x);
+        const yExtent = d3.extent(nodes, d => d.y);
+        
+        const treeWidth = xExtent[1] - xExtent[0];
+        
+        // Get sidebar width to account for available space
+        const sidebarWidth = this.getSidebarWidth();
+        const horizontalPadding = 80; // Add padding on both sides for node visibility
+        const availableWidth = this.width - sidebarWidth - horizontalPadding;
+        
+        // Center the tree in the available space (excluding sidebar and padding)
+        const translateX = (availableWidth - treeWidth) / 2 - xExtent[0] + (horizontalPadding / 2);
+        const translateY = 50;
+        
+        // Create initial transform and apply it to both the group and the zoom behavior
+        const initialTransform = d3.zoomIdentity.translate(translateX, translateY);
+        this.g.attr("transform", initialTransform);
+        
+        // Update the zoom behavior to know about this initial transform
+        if (this.svg && this.svg.node().__zoom) {
+            this.svg.call(this.zoom.transform, initialTransform);
+        }
+        
+        // Create ALL links (no filtering)
+        this.renderAllLinks(links);
+        
+        // Create ALL nodes (no filtering)
+        this.renderAllNodes(nodes);
+        
+        return nodes;
+    }
+    
+    // Render ALL tree links (no filtering)
+    renderAllLinks(links) {
+        this.g.selectAll(".link")
+            .data(links)
+            .enter().append("path")
+            .attr("class", d => `link level-${d.data.level}`)
+            .attr("data-level", d => d.data.level)
+            .attr("data-parent-level", d => d.parent.data.level)
+            .attr("d", d => {
+                return `M${d.x},${d.y}C${d.x},${(d.y + d.parent.y) / 2} ${d.parent.x},${(d.y + d.parent.y) / 2} ${d.parent.x},${d.parent.y}`;
+            });
+    }
+    
+    // Render ALL tree nodes (no filtering)
+    renderAllNodes(nodes) {
+        // Calculate size scaling based on full dataset
+        const clusterSizes = nodes.map(n => n.data.size);
+        const minSize = Math.min(...clusterSizes);
+        const maxSize = Math.max(...clusterSizes);
+        
+        // Node radius calculation function
+        const getNodeRadius = (size) => {
+            if (minSize === maxSize) {
+                // All clusters same size, use middle radius
+                return 10;
+            }
+            // Scale between 5px (min) and 15px (max) based on relative position
+            const normalizedSize = (size - minSize) / (maxSize - minSize);
+            return 5 + (normalizedSize * 10); // 5 + (0 to 1) * 10 = 5 to 15
+        };
+        
+        const node = this.g.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .attr("class", d => `node level-${d.data.level}`)
+            .attr("data-level", d => d.data.level)
+            .attr("data-node-id", d => d.data.id)
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+        
+        // Add background circles (solid white)
+        node.append("circle")
+            .attr("class", "background-circle")
+            .attr("data-node-id", d => d.data.id)
+            .attr("r", d => getNodeRadius(d.data.size))
+            .attr("fill", "white")
+            .attr("stroke", "#333")
+            .attr("stroke-width", 1.5)
+            .style("cursor", "pointer")
+            .on("click", (event, d) => {
+                // Update selected node
+                this.setSelectedNode(d.data.id);
+                // Call the click handler if it exists
+                if (this.onNodeClick) {
+                    this.onNodeClick(d.data);
+                }
+                // Prevent event bubbling
+                event.stopPropagation();
+            });
+        
+        // Add foreground circles (transparent colors)
+        node.append("circle")
+            .attr("class", "foreground-circle")
+            .attr("r", d => getNodeRadius(d.data.size))
+            .attr("fill", d => getNodeColor(d.data, true)) // Default to mask view
+            .attr("stroke", "none")
+            .style("cursor", "pointer")
+            .on("mouseover", (event, d) => {
+                window.latteViewer.annotationSystem.showTooltip(event, d.data);
+            })
+            .on("mouseout", () => {
+                window.latteViewer.annotationSystem.hideTooltip();
+            })
+            .on("click", (event, d) => {
+                // Update selected node
+                this.setSelectedNode(d.data.id);
+                // Call the click handler if it exists
+                if (this.onNodeClick) {
+                    this.onNodeClick(d.data);
+                }
+                // Prevent event bubbling
+                event.stopPropagation();
+            });
+    }
+    
+    // Update node colors via CSS class toggle
+    updateNodeColors(showMask) {
+        if (this.g) {
+            this.g.selectAll('.foreground-circle')
+                .attr('fill', d => getNodeColor(d.data, showMask));
+        }
+    }
+    
+    // Filter nodes by level using CSS classes
+    filterByLevel(maxLevel) {
+        if (!this.g) return;
+        
+        // Show/hide nodes based on level
+        this.g.selectAll('.node')
+            .classed('level-hidden', d => d.data.level < maxLevel);
+            
+        // Show/hide links based on level (both node and parent must be visible)
+        this.g.selectAll('.link')
+            .classed('level-hidden', d => d.data.level < maxLevel || d.parent.data.level < maxLevel);
+    }
+    
+    // Show/hide annotations using CSS classes
+    toggleAnnotations(show) {
+        if (this.annotationGroup) {
+            this.annotationGroup.classed('annotations-hidden', !show);
+        }
+    }
+
+    // Highlight clusters based on search results
+    highlightSearch(matchingClusters) {
+        if (!this.g) return;
+
+        // Remove all existing search dots
+        this.g.selectAll('.search-dot').remove();
+
+        if (matchingClusters.size > 0) {
+            // Add search dots to matching nodes
+            this.g.selectAll('.node')
+                .filter(d => matchingClusters.has(d.data.id))
+                .append('circle')
+                .attr('class', 'search-dot')
+                .attr('r', 3)
+                .attr('cx', 0)
+                .attr('cy', 0);
+        }
+    }
+    
+    // Get SVG group for annotations
+    getAnnotationGroup() {
+        if (!this.annotationGroup) {
+            this.annotationGroup = this.g.append("g").attr("class", "annotations");
+        }
+        return this.annotationGroup;
+    }
+    
+    // Set selected node and update visuals
+    setSelectedNode(nodeId) {
+        this.selectedNodeId = nodeId;
+        this.updateNodeSelection();
+    }
+    
+    // Clear selected node
+    clearSelectedNode() {
+        this.selectedNodeId = null;
+        this.updateNodeSelection();
+    }
+    
+    // Update node selection visuals
+    updateNodeSelection() {
+        if (this.g) {
+            // Reset all nodes to normal style
+            const allCircles = this.g.selectAll('.background-circle');
+            allCircles.classed('selected', false);
+            
+            // Highlight the selected node
+            if (this.selectedNodeId !== null) {
+                const selectedCircle = this.g.selectAll(`.background-circle[data-node-id="${this.selectedNodeId}"]`);
+                selectedCircle.classed('selected', true);
+            }
+        }
+    }
+    
+    // Get current sidebar width for layout calculations
+    getSidebarWidth() {
+        try {
+            // Try to get width from sidebar resize manager if available
+            if (window.latteViewer && window.latteViewer.sidebarResize) {
+                return window.latteViewer.sidebarResize.getWidth();
+            }
+            
+            // Fallback to CSS computed width
+            const sidebar = document.querySelector('.right-sidebar');
+            if (sidebar) {
+                const computedStyle = window.getComputedStyle(sidebar);
+                return parseInt(computedStyle.width, 10) || 300;
+            }
+            
+            // Final fallback
+            return 300;
+        } catch (e) {
+            console.warn('Could not get sidebar width:', e);
+            return 300;
+        }
+    }
+    
+    // Reset tree renderer for new data
+    reset() {
+        if (this.g) {
+            // Clear all tree elements including search dots
+            this.g.selectAll("*").remove();
+        }
+        
+        // Reset annotation group reference
+        this.annotationGroup = null;
+        
+        // Clear selected node
+        this.selectedNodeId = null;
+        
+        console.log('Tree renderer reset for new data');
+    }
+} 
+
+        // === js/annotation-system.js ===
+        // Annotation System Module for LATTE Viewer
+
+class AnnotationSystem {
+    constructor(treeRenderer, dataManager) {
+        this.treeRenderer = treeRenderer;
+        this.dataManager = dataManager;
+        this.tooltip = null;
+        this.annotationGroup = null;
+        this.isVisible = false;
+    }
+    
+    // Initialize tooltip element
+    init() {
+        this.tooltip = d3.select("#tooltip");
+    }
+    
+    // Show/hide all annotations
+    toggle(show, maxLevel = null) {
+        this.isVisible = show;
+        if (show) {
+            this.showAll(maxLevel);
+        } else {
+            this.hideAll();
+        }
+    }
+    
+    // Create annotation display - render once, filter with CSS
+    showAll(maxLevel = null) {
+        const nodes = this.dataManager.getCurrentNodes();
+        
+        if (!nodes) {
+            return;
+        }
+        
+        // Get or create annotation group
+        this.annotationGroup = this.treeRenderer.getAnnotationGroup();
+        
+        // Only render if not already rendered
+        if (this.annotationGroup.selectAll('.annotation-label').size() > 0) {
+            console.log('Annotations already rendered, using CSS filtering');
+            this.filterAnnotationsByLevel(maxLevel);
+            return;
+        }
+        
+        // IMPORTANT: Calculate positions based on ALL nodes with annotations
+        // This ensures consistent positioning regardless of level filtering
+        const allNodesWithAnnotations = nodes.filter(d => d.data.annotation);
+        
+        if (allNodesWithAnnotations.length === 0) {
+            return;
+        }
+        
+        // Calculate positioning strategy based on FULL tree size
+        const nodeCount = allNodesWithAnnotations.length;
+        const yExtent = d3.extent(nodes, d => d.y);
+        
+        // Use conservative positioning for small trees
+        const isSmallTree = nodeCount <= 5;
+        const padding = isSmallTree ? 30 : 100;
+        const minY = yExtent[0] - padding;
+        const maxY = yExtent[1] + padding;
+        const availableHeight = maxY - minY;
+        
+        // Create label data with size-appropriate positioning strategy
+        const labelData = [];
+        
+        allNodesWithAnnotations.forEach((d, nodeIndex) => {
+            const text = truncateText(d.data.annotation, 40);
+            const width = this.estimateTextWidth(text);
+            const height = 20;
+            
+            let xOffset, yOffset;
+            
+            // Special handling for root node (highest level, depth 0)
+            if (d.depth === 0 || d.data.level === Math.max(...allNodesWithAnnotations.map(n => n.data.level))) {
+                // Root annotation: place it close above the root node, always visible
+                xOffset = d.x;
+                yOffset = d.y - 40; // Fixed 40px above the root node
+            } else if (isSmallTree) {
+                // For small trees: keep annotations close to nodes
+                const sideOffset = (nodeIndex % 2 === 0 ? -1 : 1) * (width / 2 + 20);
+                xOffset = d.x + sideOffset;
+                yOffset = d.y + ((nodeIndex % 4 < 2) ? -30 : 30); // Alternate above/below
+            } else {
+                // For larger trees: use more complex positioning
+                const nodesByLevel = d3.group(allNodesWithAnnotations, d => d.depth);
+                const levels = Array.from(nodesByLevel.keys()).sort((a, b) => a - b);
+                const levelIndex = levels.indexOf(d.depth);
+                const levelNodes = nodesByLevel.get(d.depth);
+                const nodeIndexInLevel = levelNodes.indexOf(d);
+                
+                const baseY = minY + (levelIndex / (levels.length - 1 || 1)) * availableHeight;
+                const ySpread = availableHeight / (levels.length * 2);
+                const yOffsetInLevel = (nodeIndexInLevel - levelNodes.length / 2) * (ySpread / levelNodes.length);
+                const randomOffset = (Math.random() - 0.5) * 40;
+                
+                const sideOffset = (nodeIndex % 2 === 0 ? -1 : 1) * (80 + Math.random() * 40);
+                xOffset = d.x + sideOffset;
+                yOffset = baseY + yOffsetInLevel + randomOffset;
+            }
+            
+            labelData.push({
+                id: d.data.id,
+                text: text,
+                nodeX: d.x,
+                nodeY: d.y,
+                x: xOffset,
+                y: yOffset,
+                width: width,
+                height: height,
+                node: d,
+                level: d.depth
+            });
+        });
+        
+        // Apply enhanced collision resolution (excluding root node)
+        this.resolveCollisions(labelData, minY, maxY);
+        
+        // Create ALL connector lines (no filtering)
+        this.annotationGroup.selectAll(".annotation-connector")
+            .data(labelData)
+            .enter().append("line")
+            .attr("class", d => `annotation-connector level-${d.node.data.level}`)
+            .attr("data-level", d => d.node.data.level)
+            .attr("x1", d => d.nodeX)
+            .attr("y1", d => d.nodeY)
+            .attr("x2", d => d.x)
+            .attr("y2", d => d.y);
+        
+        // Create ALL label backgrounds (rectangles)
+        this.annotationGroup.selectAll(".annotation-background")
+            .data(labelData)
+            .enter().append("rect")
+            .attr("class", d => `annotation-background level-${d.node.data.level}`)
+            .attr("data-level", d => d.node.data.level)
+            .attr("x", d => d.x - (d.width / 2))
+            .attr("y", d => d.y - 10)
+            .attr("width", d => d.width)
+            .attr("height", d => d.height)
+            .attr("rx", 4)
+            .style("cursor", "pointer")
+            .on("mouseover", (event, d) => {
+                // Show full annotation text on hover
+                this.showTooltip(event, { annotation: d.node.data.annotation });
+            })
+            .on("mouseout", () => {
+                this.hideTooltip();
+            });
+        
+        // Create ALL labels
+        this.annotationGroup.selectAll(".annotation-label")
+            .data(labelData)
+            .enter().append("text")
+            .attr("class", d => `annotation-label level-${d.node.data.level}`)
+            .attr("data-level", d => d.node.data.level)
+            .attr("x", d => d.x)
+            .attr("y", d => d.y + 4)
+            .text(d => d.text)
+            .style("cursor", "pointer")
+            .on("mouseover", (event, d) => {
+                // Show full annotation text on hover
+                this.showTooltip(event, { annotation: d.node.data.annotation });
+            })
+            .on("mouseout", () => {
+                this.hideTooltip();
+            });
+            
+        // Apply initial level filtering if specified
+        if (maxLevel !== null) {
+            this.filterAnnotationsByLevel(maxLevel);
+        }
+    }
+    
+    // Enhanced collision resolution using iterative refinement
+    resolveCollisions(labelData, minY, maxY) {
+        const maxIterations = 100; // Increased iterations
+        const margin = 8; // Increased margin for better spacing
+        
+        // Identify root node (don't move it during collision resolution)
+        const rootLabel = labelData.find(label => 
+            label.node.depth === 0 || 
+            label.node.data.level === Math.max(...labelData.map(l => l.node.data.level))
+        );
+        
+        for (let iteration = 0; iteration < maxIterations; iteration++) {
+            let hasCollisions = false;
+            let totalMoves = 0;
+            
+            // Sort labels by priority (smaller labels get moved first, root stays put)
+            labelData.sort((a, b) => {
+                if (a === rootLabel) return -1; // Root has highest priority (don't move)
+                if (b === rootLabel) return 1;
+                return a.width - b.width;
+            });
+            
+            // Check all pairs for collisions
+            for (let i = 0; i < labelData.length; i++) {
+                for (let j = i + 1; j < labelData.length; j++) {
+                    const labelA = labelData[i];
+                    const labelB = labelData[j];
+                    
+                    if (this.rectanglesOverlap(labelA, labelB, margin)) {
+                        hasCollisions = true;
+                        totalMoves += this.separateLabels(labelA, labelB, margin, minY, maxY, rootLabel);
+                        
+                        // If we made significant moves, check this pair again
+                        if (totalMoves > 2) {
+                            j = i; // Restart inner loop to recheck this label against all others
+                            totalMoves = 0;
+                        }
+                    }
+                }
+            }
+            
+            // If no collisions found, we're done
+            if (!hasCollisions) {
+                break;
+            }
+            
+            // Add some randomization to avoid getting stuck in local minima
+            if (iteration > 50 && hasCollisions) {
+                this.addRandomJitter(labelData, 2, minY, maxY, rootLabel);
+            }
+        }
+    }
+    
+    // Add small random movements to break out of local minima
+    addRandomJitter(labelData, amount, minY, maxY, rootLabel = null) {
+        labelData.forEach(label => {
+            // Don't jitter the root label
+            if (label === rootLabel) return;
+            
+            label.x += (Math.random() - 0.5) * amount;
+            label.y += (Math.random() - 0.5) * amount;
+            
+            // Keep within bounds
+            const maxWidth = this.treeRenderer.width;
+            label.x = Math.max(label.width / 2 + 10, Math.min(maxWidth - label.width / 2 - 10, label.x));
+            label.y = Math.max(minY + 20, Math.min(maxY - 20, label.y));
+        });
+    }
+    
+    // Check if two rectangular labels overlap (improved)
+    rectanglesOverlap(labelA, labelB, margin = 0) {
+        const aLeft = labelA.x - labelA.width / 2 - margin;
+        const aRight = labelA.x + labelA.width / 2 + margin;
+        const aTop = labelA.y - labelA.height / 2 - margin;
+        const aBottom = labelA.y + labelA.height / 2 + margin;
+        
+        const bLeft = labelB.x - labelB.width / 2 - margin;
+        const bRight = labelB.x + labelB.width / 2 + margin;
+        const bTop = labelB.y - labelB.height / 2 - margin;
+        const bBottom = labelB.y + labelB.height / 2 + margin;
+        
+        return !(aRight <= bLeft || aLeft >= bRight || aBottom <= bTop || aTop >= bBottom);
+    }
+    
+    // Separate two overlapping labels (improved)
+    separateLabels(labelA, labelB, margin, minY, maxY, rootLabel = null) {
+        const dx = labelB.x - labelA.x;
+        const dy = labelB.y - labelA.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 0.1) {
+            // If labels are at exactly the same position, separate them arbitrarily
+            const angle = Math.random() * 2 * Math.PI;
+            labelB.x += Math.cos(angle) * 60;
+            labelB.y += Math.sin(angle) * 30;
+            this.keepInBounds(labelB, minY, maxY);
+            return 2; // Significant move
+        }
+        
+        // Calculate required separation distance
+        const requiredSeparationX = (labelA.width + labelB.width) / 2 + margin;
+        const requiredSeparationY = (labelA.height + labelB.height) / 2 + margin;
+        
+        // Calculate current separation
+        const currentSeparationX = Math.abs(dx);
+        const currentSeparationY = Math.abs(dy);
+        
+        // Calculate how much we need to move in each direction
+        const overlapX = Math.max(0, requiredSeparationX - currentSeparationX);
+        const overlapY = Math.max(0, requiredSeparationY - currentSeparationY);
+        
+        let moveCount = 0;
+        
+        // Move labels apart based on the overlap amounts
+        if (overlapX > 0 || overlapY > 0) {
+            // Prefer moving in the direction with less overlap (easier to resolve)
+            if (overlapX <= overlapY || overlapY === 0) {
+                // Separate horizontally
+                const moveDistance = (overlapX + 2) / 2; // Add extra spacing
+                if (dx >= 0) {
+                    if (labelA !== rootLabel) labelA.x -= moveDistance;
+                    if (labelB !== rootLabel) labelB.x += moveDistance;
+                    // If one is root, move the other twice as far
+                    if (labelA === rootLabel && labelB !== rootLabel) labelB.x += moveDistance;
+                    if (labelB === rootLabel && labelA !== rootLabel) labelA.x -= moveDistance;
+                } else {
+                    if (labelA !== rootLabel) labelA.x += moveDistance;
+                    if (labelB !== rootLabel) labelB.x -= moveDistance;
+                    // If one is root, move the other twice as far
+                    if (labelA === rootLabel && labelB !== rootLabel) labelB.x -= moveDistance;
+                    if (labelB === rootLabel && labelA !== rootLabel) labelA.x += moveDistance;
+                }
+                moveCount = 1;
+            }
+            
+            if (overlapY > 0 && (overlapY < overlapX || overlapX === 0)) {
+                // Separate vertically
+                const moveDistance = (overlapY + 2) / 2; // Add extra spacing
+                if (dy >= 0) {
+                    if (labelA !== rootLabel) labelA.y -= moveDistance;
+                    if (labelB !== rootLabel) labelB.y += moveDistance;
+                    // If one is root, move the other twice as far
+                    if (labelA === rootLabel && labelB !== rootLabel) labelB.y += moveDistance;
+                    if (labelB === rootLabel && labelA !== rootLabel) labelA.y -= moveDistance;
+                } else {
+                    if (labelA !== rootLabel) labelA.y += moveDistance;
+                    if (labelB !== rootLabel) labelB.y -= moveDistance;
+                    // If one is root, move the other twice as far
+                    if (labelA === rootLabel && labelB !== rootLabel) labelB.y -= moveDistance;
+                    if (labelB === rootLabel && labelA !== rootLabel) labelA.y += moveDistance;
+                }
+                moveCount = Math.max(moveCount, 1);
+            }
+        }
+        
+        // Keep labels within bounds
+        this.keepInBounds(labelA, minY, maxY);
+        this.keepInBounds(labelB, minY, maxY);
+        
+        return moveCount;
+    }
+    
+    // Helper to keep labels within bounds
+    keepInBounds(label, minY, maxY) {
+        const maxWidth = this.treeRenderer.width;
+        label.x = Math.max(label.width / 2 + 10, Math.min(maxWidth - label.width / 2 - 10, label.x));
+        label.y = Math.max(minY + 20, Math.min(maxY - 20, label.y));
+    }
+    
+    // Helper method to estimate text width for Roboto Condensed
+    estimateTextWidth(text) {
+        // Roboto Condensed is narrower, so we can use a smaller multiplier
+        return Math.max(60, text.length * 4.5); // Reduced from 6 to 4.5 for condensed font
+    }
+    
+    // Clear annotations
+    hideAll() {
+        if (this.annotationGroup) {
+            this.annotationGroup.selectAll("*").remove();
+        }
+    }
+    
+    // Filter annotations by level using CSS classes
+    filterAnnotationsByLevel(maxLevel) {
+        if (!this.annotationGroup) return;
+        
+        if (maxLevel === null) {
+            // Show all annotations
+            this.annotationGroup.selectAll('.annotation-label, .annotation-background, .annotation-connector')
+                .classed('level-hidden', false);
+        } else {
+            // Hide annotations for nodes below the level threshold
+            this.annotationGroup.selectAll('.annotation-label, .annotation-background, .annotation-connector')
+                .classed('level-hidden', function() {
+                    const level = parseInt(d3.select(this).attr('data-level'), 10);
+                    return level < maxLevel;
+                });
+        }
+    }
+    
+    // Tooltip management
+    showTooltip(event, cluster) {
+        const annotation = cluster.annotation || "No annotation available";
+        
+        this.tooltip
+            .html(annotation)
+            .style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY - 10) + "px")
+            .classed("show", true);
+    }
+    
+    hideTooltip() {
+        this.tooltip.classed("show", false);
+    }
+    
+    // Get current visibility state
+    isAnnotationsVisible() {
+        return this.isVisible;
+    }
+    
+    // Reset annotation system for new data
+    reset() {
+        // Clear all annotations
+        if (this.annotationGroup) {
+            this.annotationGroup.selectAll("*").remove();
+        }
+        
+        // Reset state
+        this.isVisible = false;
+        
+        console.log('Annotation system reset for new data');
+    }
+} 
+
+        // === js/controls.js ===
+        // Controls Module for LATTE Viewer
+
+class ControlsManager {
+    constructor(dataManager, treeRenderer, annotationSystem) {
+        this.dataManager = dataManager;
+        this.treeRenderer = treeRenderer;
+        this.annotationSystem = annotationSystem;
+        this.showMask = false;
+        this.showAnnotations = false;
+        this.maxLevel = 0;
+        this.currentLevel = 0;
+        this.currentSearchTerm = '';
+        this.matchingClusters = new Set();
+    }
+    
+    // Initialize event listeners
+    init() {
+        this.setupFileInput();
+        this.setupIconToggles();
+        this.setupLevelSlider();
+        this.setupSearch();
+        this.displayMetadata();
+        
+        // Apply initial states
+        this.updateToggleVisuals();
+    }
+    
+    // Setup file input handling
+    setupFileInput() {
+        const fileInput = document.getElementById('jsonFile');
+        if (fileInput) {
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    // Reset everything before loading new file
+                    this.resetVisualization();
+                    
+                    this.dataManager.loadFromFile(file)
+                        .then(() => {
+                            this.displayMetadata();
+                            this.updateVisualization();
+                        })
+                        .catch(error => {
+                            alert(error.message);
+                        });
+                }
+            });
+        }
+    }
+    
+    // Setup icon toggle controls
+    setupIconToggles() {
+        const maskToggle = document.getElementById('showMaskToggle');
+        const annotationsToggle = document.getElementById('showAnnotationsToggle');
+        
+        if (maskToggle) {
+            maskToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showMask = !this.showMask;
+                this.updateToggleVisuals();
+                this.updateVisualization();
+            });
+        }
+        
+        if (annotationsToggle) {
+            annotationsToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showAnnotations = !this.showAnnotations;
+                this.updateToggleVisuals();
+                this.updateVisualization();
+            });
+        }
+    }
+    
+    // Setup level slider
+    setupLevelSlider() {
+        const levelSlider = document.getElementById('levelSlider');
+        
+        if (levelSlider) {
+            levelSlider.addEventListener('input', (e) => {
+                this.currentLevel = parseInt(e.target.value);
+                this.updateVisualization();
+            });
+        }
+    }
+
+    // Setup search functionality
+    setupSearch() {
+        const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
+        
+        if (searchInput) {
+            // Handle search input with debouncing
+            let searchTimeout;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    this.handleSearch(e.target.value);
+                }, 300); // 300ms debounce
+            });
+
+            // Handle Enter key for immediate search
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    clearTimeout(searchTimeout);
+                    this.handleSearch(e.target.value);
+                }
+            });
+        }
+
+        if (clearSearch) {
+            clearSearch.addEventListener('click', () => {
+                if (searchInput) {
+                    searchInput.value = '';
+                    this.handleSearch('');
+                }
+            });
+        }
+    }
+    
+    // Update visual state of toggle icons
+    updateToggleVisuals() {
+        const maskToggle = document.getElementById('showMaskToggle');
+        const annotationsToggle = document.getElementById('showAnnotationsToggle');
+        
+        if (maskToggle) {
+            if (this.showMask) {
+                maskToggle.classList.add('active');
+            } else {
+                maskToggle.classList.remove('active');
+            }
+        }
+        
+        if (annotationsToggle) {
+            if (this.showAnnotations) {
+                annotationsToggle.classList.add('active');
+            } else {
+                annotationsToggle.classList.remove('active');
+            }
+        }
+    }
+    
+    // Handle mask toggle changes
+    onMaskToggle(checked) {
+        this.showMask = checked;
+        this.updateToggleVisuals();
+        this.updateVisualization();
+    }
+    
+    // Handle annotation toggle changes
+    onAnnotationToggle(checked) {
+        this.showAnnotations = checked;
+        this.updateToggleVisuals();
+        this.updateVisualization();
+    }
+    
+    // Handle search input
+    handleSearch(searchTerm) {
+        this.currentSearchTerm = searchTerm.trim();
+        
+        // Update clear button visibility
+        const clearSearch = document.getElementById('clearSearch');
+        if (clearSearch) {
+            clearSearch.style.display = this.currentSearchTerm ? 'flex' : 'none';
+        }
+
+        if (this.currentSearchTerm) {
+            // Perform search
+            const searchResults = this.dataManager.searchClusters(this.currentSearchTerm);
+            this.matchingClusters = searchResults.matchingClusters;
+        } else {
+            // Clear search
+            this.matchingClusters = new Set();
+        }
+
+        this.updateVisualization();
+        
+        // Refresh sidebar with new search term if a cluster is currently displayed
+        if (window.latteViewer && window.latteViewer.sidebar) {
+            window.latteViewer.sidebar.refreshWithSearch(this.currentSearchTerm);
+        }
+    }
+
+    // Update visualization based on current state
+    updateVisualization() {
+        if (!this.dataManager.hasData()) {
+            return;
+        }
+        
+        // Render tree once (will skip if already rendered)
+        this.treeRenderer.render();
+        
+        // Update tree state using CSS classes
+        this.treeRenderer.updateNodeColors(this.showMask);
+        this.treeRenderer.filterByLevel(this.currentLevel);
+        this.treeRenderer.toggleAnnotations(this.showAnnotations);
+        
+        // Apply search highlighting
+        this.treeRenderer.highlightSearch(this.matchingClusters);
+        
+        // Update annotations display (render once, then filter)
+        this.annotationSystem.showAll(this.currentLevel);
+        this.annotationSystem.toggle(this.showAnnotations, this.currentLevel);
+    }
+    
+    // Display metadata information
+    displayMetadata() {
+        const metadata = this.dataManager.getMetadata();
+        if (!metadata) {
+            d3.select("#metadata").style("display", "none");
+            d3.select(".level-slider-container").style("display", "none");
+            d3.select(".search-container").style("display", "none");
+            return;
+        }
+        
+        // Update max level and slider
+        this.maxLevel = metadata.max_level;
+        this.currentLevel = 0; // Start showing all levels (most detailed)
+        this.updateLevelSlider();
+        
+        // Show search container
+        d3.select(".search-container").style("display", "flex");
+        
+        const metadataDiv = d3.select("#metadata");
+        metadataDiv.style("display", "block")
+            .html(`
+                <strong>Dataset:</strong> 
+                ${metadata.total_documents} docs, 
+                ${metadata.total_clusters} clusters, 
+                ${metadata.max_level + 1} levels
+                ${metadata.mask_baseline_proportion ? 
+                    ` • Baseline: ${(metadata.mask_baseline_proportion * 100).toFixed(1)}%` : ''}
+            `);
+    }
+    
+    // Update level slider based on current dataset
+    updateLevelSlider() {
+        const levelSlider = document.getElementById('levelSlider');
+        const sliderContainer = document.querySelector('.level-slider-container');
+        
+        if (levelSlider && sliderContainer) {
+            levelSlider.min = 0;
+            levelSlider.max = this.maxLevel;
+            levelSlider.value = 0; // Start at most detailed level
+            sliderContainer.style.display = 'flex';
+        }
+    }
+    
+    // Load embedded data (for development/testing)
+    loadEmbeddedData(embeddedData) {
+        if (this.dataManager.loadEmbeddedData(embeddedData)) {
+            this.displayMetadata();
+            this.updateVisualization();
+            return true;
+        }
+        return false;
+    }
+    
+    // Get current state for external access
+    getState() {
+        return {
+            showMask: this.showMask,
+            showAnnotations: this.showAnnotations
+        };
+    }
+    
+    // Set state programmatically
+    setState(state) {
+        if (state.showMask !== undefined) {
+            this.showMask = state.showMask;
+        }
+        if (state.showAnnotations !== undefined) {
+            this.showAnnotations = state.showAnnotations;
+        }
+        this.updateToggleVisuals();
+        this.updateVisualization();
+    }
+    
+    // Reset visualization for new file loading
+    resetVisualization() {
+        // Clear tree renderer
+        this.treeRenderer.reset();
+        
+        // Clear annotation system
+        this.annotationSystem.reset();
+        
+        // Clear sidebar
+        if (window.latteViewer && window.latteViewer.sidebar) {
+            window.latteViewer.sidebar.renderEmptyState();
+        }
+        
+        // Reset control state
+        this.showMask = false;
+        this.showAnnotations = false;
+        this.maxLevel = 0;
+        this.currentLevel = 0;
+        this.currentSearchTerm = '';
+        this.matchingClusters = new Set();
+        
+        // Clear search input
+        const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
+        if (searchInput) {
+            searchInput.value = '';
+        }
+        if (clearSearch) {
+            clearSearch.style.display = 'none';
+        }
+        
+        // Update UI
+        this.updateToggleVisuals();
+        
+        // Hide metadata, slider, and search until new data loads
+        d3.select("#metadata").style("display", "none");
+        d3.select(".level-slider-container").style("display", "none");
+        d3.select(".search-container").style("display", "none");
+    }
+} 
+
+        // === js/sidebar.js ===
+        // Sidebar Module for LATTE Viewer
+
+class SidebarManager {
+    constructor(dataManager) {
+        this.dataManager = dataManager;
+        this.sidebarElement = document.querySelector('.right-sidebar');
+        this.selectedCluster = null;
+    }
+    
+    // Initialize sidebar
+    init() {
+        this.renderEmptyState();
+    }
+    
+    // Show empty state when no cluster is selected
+    renderEmptyState() {
+        if (!this.sidebarElement) return;
+        
+        this.selectedCluster = null;
+        
+        // Clear node selection in tree renderer
+        if (window.latteViewer && window.latteViewer.treeRenderer) {
+            window.latteViewer.treeRenderer.clearSelectedNode();
+        }
+        
+        // Preserve the resize handle if it exists
+        const resizeHandle = this.sidebarElement.querySelector('.resize-handle');
+        
+        this.sidebarElement.innerHTML = `
+            <div class="sidebar-empty-state">
+                <div class="empty-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <p class="empty-text">Click on a node to view cluster contents</p>
+            </div>
+        `;
+        
+        // Re-add the resize handle if it existed
+        if (resizeHandle) {
+            this.sidebarElement.insertBefore(resizeHandle, this.sidebarElement.firstChild);
+        }
+    }
+    
+    // Display cluster details and titles
+    displayCluster(clusterData, searchTerm = '') {
+        if (!this.sidebarElement || !clusterData) return;
+        
+        this.selectedCluster = clusterData;
+        const titles = this.dataManager.getTitles();
+        const clusterTitles = this.getClusterTitles(clusterData, titles);
+        
+        // Limit to 50 random titles if more than 50
+        const displayTitles = clusterTitles.length > 50 
+            ? this.getRandomSample(clusterTitles, 50)
+            : clusterTitles;
+        
+        const annotation = clusterData.annotation || 'No annotation available';
+        
+        // Preserve the resize handle if it exists
+        const resizeHandle = this.sidebarElement.querySelector('.resize-handle');
+        
+        this.sidebarElement.innerHTML = `
+            <div class="cluster-details">
+                <div class="cluster-summary">
+                    <p>${this.decodeHtml(annotation)}</p>
+                    ${clusterData.mask_proportion !== undefined ? `
+                    <div class="mask-proportion">${(clusterData.mask_proportion * 100).toFixed(1)}% mask proportion</div>
+                    ` : ''}
+                </div>
+                
+                <div class="cluster-titles">
+                    <h4>
+                        Documents 
+                        ${clusterTitles.length > 50 ? `
+                        <span class="sample-note">(showing ${displayTitles.length} of ${clusterTitles.length})</span>
+                        ` : `
+                        <span class="total-count">(${displayTitles.length})</span>
+                        `}
+                    </h4>
+                    <div class="titles-list">
+                        ${displayTitles.map((title, index) => `
+                            <div class="title-item">
+                                <span class="title-number">${index + 1}.</span>
+                                <span class="title-text ${this.isMatchingTitle(title, searchTerm) ? 'search-highlight' : ''}">${this.decodeHtml(title)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Re-add the resize handle if it existed
+        if (resizeHandle) {
+            this.sidebarElement.insertBefore(resizeHandle, this.sidebarElement.firstChild);
+        }
+    }
+    
+    // Get titles for a specific cluster
+    getClusterTitles(clusterData, allTitles) {
+        if (!clusterData.point_indices || !allTitles) return [];
+        
+        return clusterData.point_indices.map(index => allTitles[index]).filter(title => title);
+    }
+    
+    // Get random sample of titles
+    getRandomSample(array, sampleSize) {
+        const shuffled = [...array].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, sampleSize);
+    }
+
+    // Check if title matches search term (case-insensitive)
+    isMatchingTitle(title, searchTerm) {
+        return searchTerm && title.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+    
+    // Decode HTML entities properly
+    decodeHtml(text) {
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = text;
+        const decoded = textarea.value;
+        
+        // Now escape for XSS protection
+        const div = document.createElement('div');
+        div.textContent = decoded;
+        return div.innerHTML;
+    }
+    
+    // Get currently selected cluster
+    getSelectedCluster() {
+        return this.selectedCluster;
+    }
+    
+    // Check if sidebar is showing cluster details
+    isShowingCluster() {
+        return this.selectedCluster !== null;
+    }
+
+    // Refresh current cluster display with new search term
+    refreshWithSearch(searchTerm) {
+        if (this.selectedCluster) {
+            this.displayCluster(this.selectedCluster, searchTerm);
+        }
+    }
+} 
+
+        // === js/sidebar-resize.js ===
+        // Sidebar Resize Module for LATTE Viewer
+
+class SidebarResize {
+    constructor() {
+        this.sidebar = null;
+        this.resizeHandle = null;
+        this.isResizing = false;
+        this.minWidth = 200;
+        this.maxWidth = 1200;
+        this.currentWidth = 300;
+    }
+    
+    // Initialize the resize functionality
+    init() {
+        this.sidebar = document.querySelector('.right-sidebar');
+        this.resizeHandle = document.querySelector('.resize-handle');
+        
+        if (!this.sidebar || !this.resizeHandle) {
+            console.warn('Sidebar or resize handle not found');
+            return;
+        }
+        
+        this.attachEventListeners();
+    }
+    
+    // Attach event listeners for resize functionality
+    attachEventListeners() {
+        this.resizeHandle.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        document.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        document.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        
+        // Prevent text selection during resize
+        this.resizeHandle.addEventListener('selectstart', (e) => e.preventDefault());
+    }
+    
+    // Handle mouse down on resize handle
+    handleMouseDown(event) {
+        this.isResizing = true;
+        document.body.style.cursor = 'col-resize';
+        document.body.style.userSelect = 'none';
+        
+        // Disable CSS transition during resize for smooth dragging
+        this.sidebar.style.transition = 'none';
+        
+        event.preventDefault();
+    }
+    
+    // Handle mouse move during resize
+    handleMouseMove(event) {
+        if (!this.isResizing) return;
+        
+        const containerRect = document.querySelector('.main-content').getBoundingClientRect();
+        const newWidth = containerRect.right - event.clientX;
+        
+        // Constrain width within min/max bounds
+        const constrainedWidth = Math.max(this.minWidth, Math.min(this.maxWidth, newWidth));
+        
+        this.setSidebarWidth(constrainedWidth);
+        
+        event.preventDefault();
+    }
+    
+    // Handle mouse up to stop resizing
+    handleMouseUp(event) {
+        if (!this.isResizing) return;
+        
+        this.isResizing = false;
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+        
+        // Re-enable CSS transition
+        this.sidebar.style.transition = 'width 0.2s ease';
+        
+        event.preventDefault();
+    }
+    
+    // Set the sidebar width
+    setSidebarWidth(width) {
+        this.currentWidth = width;
+        this.sidebar.style.width = `${width}px`;
+    }
+    
+
+    
+    // Get current sidebar width
+    getWidth() {
+        return this.currentWidth;
+    }
+    
+    // Set width programmatically
+    setWidth(width) {
+        const constrainedWidth = Math.max(this.minWidth, Math.min(this.maxWidth, width));
+        this.setSidebarWidth(constrainedWidth);
+    }
+} 
+
+        // === js/smart-tooltips.js ===
+        // Smart Tooltips Module for LATTE Viewer
+
+class SmartTooltips {
+    constructor() {
+        this.tooltip = null;
+        this.hideTimeout = null;
+    }
+    
+    // Initialize the tooltip system
+    init() {
+        this.createTooltipElement();
+        this.attachEventListeners();
+    }
+    
+    // Create the tooltip DOM element
+    createTooltipElement() {
+        this.tooltip = document.createElement('div');
+        this.tooltip.className = 'smart-tooltip';
+        document.body.appendChild(this.tooltip);
+    }
+    
+    // Attach event listeners to elements with title attributes
+    attachEventListeners() {
+        // Target elements that should show tooltips
+        const tooltipElements = document.querySelectorAll('.icon-toggle, .file-input-label, .level-slider');
+        
+        tooltipElements.forEach(element => {
+            element.addEventListener('mouseenter', (e) => this.showTooltip(e));
+            element.addEventListener('mouseleave', () => this.hideTooltip());
+            element.addEventListener('mousemove', (e) => this.updatePosition(e));
+        });
+    }
+    
+    // Show tooltip with smart positioning
+    showTooltip(event) {
+        const element = event.currentTarget;
+        const text = element.getAttribute('title') || element.getAttribute('data-tooltip');
+        
+        if (!text) return;
+        
+        // Clear any existing hide timeout
+        if (this.hideTimeout) {
+            clearTimeout(this.hideTimeout);
+            this.hideTimeout = null;
+        }
+        
+        this.tooltip.textContent = text;
+        this.tooltip.classList.add('show');
+        
+        this.updatePosition(event);
+    }
+    
+    // Update tooltip position with smart viewport detection
+    updatePosition(event) {
+        if (!this.tooltip.classList.contains('show')) return;
+        
+        const element = event.currentTarget;
+        const rect = element.getBoundingClientRect();
+        const tooltipRect = this.tooltip.getBoundingClientRect();
+        const viewport = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+        
+        let left, top;
+        const offset = 8; // Distance from element
+        
+        // Default position: below and centered
+        left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+        top = rect.bottom + offset;
+        
+        // Check if tooltip would go outside viewport horizontally
+        if (left < 0) {
+            // Too far left, align to left edge
+            left = offset;
+        } else if (left + tooltipRect.width > viewport.width) {
+            // Too far right, align to right edge
+            left = viewport.width - tooltipRect.width - offset;
+        }
+        
+        // Check if tooltip would go outside viewport vertically
+        if (top + tooltipRect.height > viewport.height) {
+            // Show above element instead
+            top = rect.top - tooltipRect.height - offset;
+            
+            // If still outside viewport, show at top
+            if (top < 0) {
+                top = offset;
+            }
+        }
+        
+        this.tooltip.style.left = `${left}px`;
+        this.tooltip.style.top = `${top}px`;
+    }
+    
+    // Hide tooltip with delay
+    hideTooltip() {
+        this.hideTimeout = setTimeout(() => {
+            this.tooltip.classList.remove('show');
+        }, 100); // Small delay to prevent flickering
+    }
+    
+    // Remove tooltip element
+    destroy() {
+        if (this.tooltip) {
+            this.tooltip.remove();
+            this.tooltip = null;
+        }
+        if (this.hideTimeout) {
+            clearTimeout(this.hideTimeout);
+            this.hideTimeout = null;
+        }
+    }
+} 
+
+        // === js/main.js ===
+        // Main Application Module for LATTE Viewer
+
+class LatteViewer {
+    constructor() {
+        this.dataManager = new DataManager();
+        this.treeRenderer = new TreeRenderer('#tree-container', this.dataManager);
+        this.annotationSystem = new AnnotationSystem(this.treeRenderer, this.dataManager);
+        this.sidebar = new SidebarManager(this.dataManager);
+        this.sidebarResize = new SidebarResize();
+        this.smartTooltips = new SmartTooltips();
+        this.controls = new ControlsManager(this.dataManager, this.treeRenderer, this.annotationSystem);
+    }
+    
+    // Initialize the application
+    init() {
+        // Initialize all components
+        this.treeRenderer.init();
+        this.annotationSystem.init();
+        this.sidebar.init();
+        this.sidebarResize.init();
+        this.smartTooltips.init();
+        this.controls.init();
+        
+        // Set up node click handling
+        this.treeRenderer.onNodeClick = (clusterData) => {
+            const searchTerm = this.controls.currentSearchTerm || '';
+            this.sidebar.displayCluster(clusterData, searchTerm);
+        };        
+        // Auto-load embedded data
+        if (typeof EMBEDDED_DATA !== 'undefined') {
+            this.controls.loadEmbeddedData(EMBEDDED_DATA);
+        }
+        
+
+    }
+}
+
+// Application entry point
+window.addEventListener('load', () => {
+    // Create global instance for cross-module communication
+    window.latteViewer = new LatteViewer();
+    window.latteViewer.init();
+}); 
+    </script>
+</body>
+</html> 
